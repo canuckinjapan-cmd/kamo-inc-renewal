@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Services — What We Do | Kamo, Inc.</title>
+  <meta name="description" content="Catalyzing IT business operations, partner negotiations, and international standards promotion in Japan." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <!-- Style & Lang handler -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    (function() {
+      var lang = localStorage.getItem("kamo-lang") || "en";
+      document.documentElement.setAttribute("lang", lang);
+      var style = document.createElement("style");
+      style.id = "lang-loader-style";
+      if (lang === "en") {
+        style.textContent = `
+          .lang-jp { display: none !important; }
+          .lang-en { display: inline-block; }
+          p.lang-en, div.lang-en, section.lang-en, h1.lang-en, h2.lang-en, h3.lang-en { display: block; }
+        `;
+      } else {
+        style.textContent = `
+          .lang-en { display: none !important; }
+          .lang-jp { display: inline-block; }
+          p.lang-jp, div.lang-jp, section.lang-jp, h1.lang-jp, h2.lang-jp, h3.lang-jp { display: block; }
+        `;
+      }
+      document.head.appendChild(style);
+    })();
+  </script>
+</head>
+<body class="bg-paper text-ink font-sans font-semibold">
+
+  <!-- Header -->
+  <header id="site-header" class="sticky top-0 z-50 backdrop-blur-md bg-paper/80 border-b border-transparent transition-all duration-300">
+    <div class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between gap-6">
+      <a href="index.html" class="flex items-center gap-3 group relative">
+        <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
+        <div id="return-to-top-tooltip" class="absolute top-[125%] left-0 z-50 rounded-md bg-crimson px-2.5 py-1 text-[9px] font-sans font-medium tracking-[0.16em] text-white uppercase whitespace-nowrap shadow-md opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+          <div class="absolute top-0 left-5 h-1.5 w-1.5 -translate-y-[40%] rotate-45 bg-crimson"></div>
+          <span class="lang-en">Return to top</span>
+          <span class="lang-jp hidden" lang="ja">トップに戻る</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-7 text-[13px] tracking-[0.18em] uppercase">
+        <a href="bio.html" id="nav-bio" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
+          <span class="lang-en">Bio</span>
+          <span class="lang-jp hidden" lang="ja">経歴</span>
+        </a>
+        <a href="services.html" id="nav-services" class="text-crimson font-black transition-all duration-200">
+          <span class="lang-en">Services</span>
+          <span class="lang-jp hidden" lang="ja">業務内容</span>
+        </a>
+        <a href="experience.html" id="nav-experience" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
+          <span class="lang-en">Experience</span>
+          <span class="lang-jp hidden" lang="ja">実績</span>
+        </a>
+        <a href="resources.html" id="nav-resources" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
+          <span class="lang-en">Resources</span>
+          <span class="lang-jp hidden" lang="ja">資料</span>
+        </a>
+        <a href="contact.html" id="nav-contact" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
+          <span class="lang-en">Contact</span>
+          <span class="lang-jp hidden" lang="ja">お問い合わせ</span>
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <button id="lang-btn-en" onclick="setLang('en')" class="focus:outline-none" aria-label="English">
+            <img id="flag-en-img" src="assets/us.png" alt="English" class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350" />
+          </button>
+          <span class="text-ink/10 select-none">/</span>
+          <button id="lang-btn-jp" onclick="setLang('jp')" class="focus:outline-none" aria-label="日本語">
+            <img id="flag-jp-img" src="assets/jp.png" alt="日本語" class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350" />
+          </button>
+        </div>
+
+        <button onclick="toggleMobileMenu(true)" class="lg:hidden flex items-center justify-center p-2 text-ink/70 hover:text-crimson transition-all duration-300 focus:outline-none" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#FAF7F2]/98 flex flex-col lg:hidden transition-all duration-300 hidden overflow-y-auto">
+    <div class="mx-auto w-full max-w-7xl px-6 h-16 flex items-center justify-between gap-6 border-b border-ink/5 bg-paper shrink-0">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
+      </a>
+
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2">
+          <button onclick="setLang('en')" class="focus:outline-none">
+            <img src="assets/us.png" alt="English" class="mobile-flag-en h-[18px] w-auto object-contain rounded-[2px] border border-ink/10" />
+          </button>
+          <span class="text-ink/10 select-none">/</span>
+          <button onclick="setLang('jp')" class="focus:outline-none">
+            <img src="assets/jp.png" alt="日本語" class="mobile-flag-jp h-[18px] w-auto object-contain rounded-[2px] border border-ink/10" />
+          </button>
+        </div>
+
+        <button onclick="toggleMobileMenu(false)" class="p-2 text-ink/70 hover:text-crimson focus:outline-none" aria-label="Close Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1 flex flex-col justify-start py-6 pt-12 md:pt-20 px-8 md:px-12 space-y-6 landscape:space-y-4 bg-paper min-h-[300px]">
+      <div class="space-y-5 landscape:space-y-3 max-w-sm mx-auto w-full">
+        <a href="bio.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
+          <div class="flex items-baseline gap-4">
+            <span class="font-mono text-[10px] text-ink/40">01</span>
+            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
+              <span class="lang-en">Bio</span>
+              <span class="lang-jp hidden" lang="ja">経歴</span>
+            </span>
+          </div>
+          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
+        </a>
+        <a href="services.html" class="group flex items-baseline justify-between py-3 border-b border-crimson/30 transition-all duration-300 text-crimson font-extrabold">
+          <div class="flex items-baseline gap-4">
+            <span class="font-mono text-[10px]">02</span>
+            <span class="text-lg font-medium tracking-[0.16em] uppercase">
+              <span class="lang-en">Services</span>
+              <span class="lang-jp hidden" lang="ja">業務内容</span>
+            </span>
+          </div>
+          <span class="text-xs font-mono">→</span>
+        </a>
+        <a href="experience.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
+          <div class="flex items-baseline gap-4">
+            <span class="font-mono text-[10px] text-ink/40">03</span>
+            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
+              <span class="lang-en">Experience</span>
+              <span class="lang-jp hidden" lang="ja">実績</span>
+            </span>
+          </div>
+          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
+        </a>
+        <a href="resources.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
+          <div class="flex items-baseline gap-4">
+            <span class="font-mono text-[10px] text-ink/40">04</span>
+            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
+              <span class="lang-en">Resources</span>
+              <span class="lang-jp hidden" lang="ja">資料</span>
+            </span>
+          </div>
+          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
+        </a>
+        <a href="contact.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
+          <div class="flex items-baseline gap-4">
+            <span class="font-mono text-[10px] text-ink/40">05</span>
+            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
+              <span class="lang-en">Contact</span>
+              <span class="lang-jp hidden" lang="ja">お問い合わせ</span>
+            </span>
+          </div>
+          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Section Opener -->
+    <section class="mx-auto max-w-7xl px-6 pt-24 pb-16 animate-fade-up">
+      <div class="flex items-start gap-8">
+        <div class="flex flex-col items-center gap-4 pt-2">
+          <span class="block w-4 h-4 rounded-full bg-crimson" aria-hidden="true"></span>
+          <span class="font-jp text-ink/70 text-sm tategaki hidden sm:block">
+            業務内容
+          </span>
+        </div>
+        <div class="flex-1">
+          <p class="text-[11px] tracking-[0.3em] uppercase text-ink/50 mb-3">02 — Services</p>
+          <h1 class="font-serif text-5xl md:text-6xl text-ink leading-[1.05]">What we do</h1>
+          <div class="mt-6 max-w-2xl text-ink/70 leading-relaxed font-sans font-semibold">
+            kamo, inc. operates as a catalyst — translating intent into operational reality across language, culture, and engineering boundaries.
+          </div>
+        </div>
+      </div>
+      <div class="hairline mt-16"></div>
+    </section>
+
+    <!-- Services List -->
+    <section class="mx-auto max-w-5xl px-6">
+      <ol class="grid gap-4">
+        
+        <!-- Card 01 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">01</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Leading the design and implementation of business operations systems for Japan.</p>
+        </li>
+
+        <!-- Card 02 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">02</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Facilitating discussions with Japanese partners to launch business operations and enhance business processes.</p>
+        </li>
+
+        <!-- Card 03 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">03</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Catalyzing the creation of detailed specifications for technical interfaces with Japanese counterparts.</p>
+        </li>
+
+        <!-- Card 04 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">04</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Helping to navigate difficult-to-understand cultural and organizational contexts of doing business in Japan.</p>
+        </li>
+
+        <!-- Card 05 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">05</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Negotiating license agreements, subscription arrangements, VARs, OEMs, mergers / acquisitions, IP transfer, and banking partnerships.</p>
+        </li>
+
+        <!-- Card 06 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">06</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Overseeing hiring and management of engineering, technical support, and operations talent for global cross-functional teams.</p>
+        </li>
+
+        <!-- Card 07 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">07</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Developing functional business processes to maximize cost-benefit and handle exceptions.</p>
+        </li>
+
+        <!-- Card 08 -->
+        <li class="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] gap-4 p-6 sm:p-8 border border-ink/10 bg-[#FAF7F2] hover:bg-white hover:border-crimson/30 transition-all duration-350 shadow-sm hover:shadow-md rounded-[2px] items-start">
+          <span class="font-serif text-3xl text-crimson tabular-nums leading-none">08</span>
+          <p class="text-lg text-ink/85 leading-relaxed font-sans font-semibold">Promoting emerging international technical standards in Japan.</p>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="mx-auto max-w-7xl px-6 mt-28 pb-32 md:pb-44">
+      <h2 class="font-serif text-3xl mb-8">Resources</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        
+        <a href="#" class="block border border-ink/10 bg-[#FAF7F2] p-6 hover:bg-white hover:border-crimson/30 transition-all duration-300 group shadow-sm hover:shadow-md rounded-[2px]">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-ink/40 mb-3 font-mono">White paper · PDF</p>
+          <h3 class="font-serif text-xl mb-2 group-hover:text-crimson transition-colors">EDI / Payment Systems</h3>
+          <p class="text-sm text-ink/60 font-sans font-semibold">Reference architecture and lessons learned.</p>
+        </a>
+
+        <a href="#" class="block border border-ink/10 bg-[#FAF7F2] p-6 hover:bg-white hover:border-crimson/30 transition-all duration-300 group shadow-sm hover:shadow-md rounded-[2px]">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-ink/40 mb-3 font-mono">Case study · Video</p>
+          <h3 class="font-serif text-xl mb-2 group-hover:text-crimson transition-colors">Most Unusual Project</h3>
+          <p class="text-sm text-ink/60 font-sans font-semibold">A walk through an unconventional engagement.</p>
+        </a>
+
+        <a href="#" class="block border border-ink/10 bg-[#FAF7F2] p-6 hover:bg-white hover:border-crimson/30 transition-all duration-300 group shadow-sm hover:shadow-md rounded-[2px]">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-ink/40 mb-3 font-mono">Case study · Video</p>
+          <h3 class="font-serif text-xl mb-2 group-hover:text-crimson transition-colors">XML & OpenGL</h3>
+          <p class="text-sm text-ink/60 font-sans font-semibold">Bridging standards work with productization in Japan.</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 pb-6">
+    <div class="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div class="text-left font-sans text-sm text-ink/75">
+        <span class="text-crimson">©</span> <span id="footer-year">2026</span> kamo, inc. ・Established 1991 ・Sakaki, Japan - All Rights Reserved
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="text-ink/60 hover:text-crimson transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="#" target="_blank" rel="noreferrer" aria-label="X (formerly Twitter)" class="text-ink/60 hover:text-crimson transition-colors duration-200">
+          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+          </svg>
+        </a>
+        <a href="#" target="_blank" rel="noreferrer" aria-label="Facebook" class="text-ink/60 hover:text-crimson transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
