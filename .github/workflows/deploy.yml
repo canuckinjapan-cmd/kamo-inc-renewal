@@ -26,10 +26,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+          # Removed lockfile cache check to prevent crashing
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install # Switched from npm ci to allow installation without a lockfile
 
       - name: Build Project
         run: npm run build
@@ -37,10 +37,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Points to the static assets compiled by your project (usually dist or out)
           path: ./dist 
 
-  # 2. Deployment job that safely references the output URL
+  # 2. Deployment job
   deploy:
     environment:
       name: github-pages
