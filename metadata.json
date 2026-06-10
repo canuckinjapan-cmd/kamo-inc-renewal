@@ -1,0 +1,6 @@
+{
+  "name": "Kamo, Inc.",
+  "description": "Consultant for multinationals, startups, and academic organizations on IT business development projects in the Japanese market.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
