@@ -1,8 +1,8 @@
-name: Deploy Static Content to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,11 +11,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -24,36 +21,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 24
+          bun-version: latest
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: bun install
 
-      - name: Build Project
-        run: npm run build
-        env:
-          GEMINI_API_KEY: "placeholder-key-for-build-validation"
+      - name: Build
+        run: bun run build
 
-      - name: Determine Artifact Directory
-        id: set-path
+      - name: Create 404.html for SPA routing
         run: |
-          if [ -d "./dist" ]; then
-            echo "dir=./dist" >> $GITHUB_OUTPUT
-          elif [ -d "./out" ]; then
-            echo "dir=./out" >> $GITHUB_OUTPUT
-          elif [ -d "./build" ]; then
-            echo "dir=./build" >> $GITHUB_OUTPUT
-          else
-            echo "dir=." >> $GITHUB_OUTPUT
-          fi
+          cp dist/index.html dist/404.html
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
-          path: ${{ steps.set-path.outputs.dir }}
+          path: dist
 
   deploy:
     environment:
@@ -64,4 +50,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v2
