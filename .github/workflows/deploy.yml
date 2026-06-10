@@ -29,8 +29,8 @@ jobs:
         with:
           node-version: 24 # Upgraded engine to match current ecosystem defaults
 
-      - name: Install dependencies
-        run: npm install
+ - name: Install dependencies
+        run: npm install --legacy-peer-deps
 
       # If your build script requires an environment variable to pass validation,
       # we stub a blank one here so the build doesn't throw a code error.
