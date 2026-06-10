@@ -2,7 +2,7 @@ name: Deploy Static Content to Pages
 
 on:
   push:
-    branches: ["main"] # Change to "master" if your default branch is master
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true # Clears the deprecation warning natively
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -27,19 +27,16 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # Upgraded engine to match current ecosystem defaults
+          node-version: 24
 
- - name: Install dependencies
+      - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # If your build script requires an environment variable to pass validation,
-      # we stub a blank one here so the build doesn't throw a code error.
       - name: Build Project
         run: npm run build
         env:
           GEMINI_API_KEY: "placeholder-key-for-build-validation"
 
-      # This auto-detects common framework output folders if it isn't strictly './dist'
       - name: Determine Artifact Directory
         id: set-path
         run: |
