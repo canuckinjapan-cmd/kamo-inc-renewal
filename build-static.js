@@ -58,13 +58,16 @@ rootFiles.forEach((file) => {
   }
 });
 
+// Create .nojekyll file in dist to disable Jekyll processing on GitHub Pages
+fs.writeFileSync(path.join("./dist", ".nojekyll"), "");
+
 // 6. Compile Tailwind CSS using CLI to both local and dist outputs
 console.log("Compiling Tailwind CSS...");
 try {
   // Compile to local css for dev
-  execSync("npx -y @tailwindcss/cli -i src/styles.css -o css/styles.css", { stdio: "inherit" });
+  execSync("npx @tailwindcss/cli -i src/styles.css -o css/styles.css", { stdio: "inherit" });
   // Compile to dist css for production
-  execSync("npx -y @tailwindcss/cli -i src/styles.css -o dist/css/styles.css", {
+  execSync("npx @tailwindcss/cli -i src/styles.css -o dist/css/styles.css", {
     stdio: "inherit",
   });
   console.log("CSS compile succeeded!");
