@@ -14,10 +14,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
   <!-- Style & Lang handler -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
   <script>
     (function() {
-      var lang = localStorage.getItem("kamo-lang") || "en";
+      var lang = "en";
+      try {
+        if (typeof localStorage !== "undefined" && localStorage && typeof localStorage.getItem === "function") {
+          lang = localStorage.getItem("kamo-lang") || "en";
+        }
+      } catch (e) {
+        // Falls back silently when localStorage is restricted or blocked inside sandboxed iframe
+      }
       document.documentElement.setAttribute("lang", lang);
       var style = document.createElement("style");
       style.id = "lang-loader-style";
@@ -34,7 +41,7 @@
           p.lang-jp, div.lang-jp, section.lang-jp, h1.lang-jp, h2.lang-jp, h3.lang-jp { display: block; }
         `;
       }
-      document.head.appendChild(style);
+      (document.head || document.getElementsByTagName("head")[0] || document.documentElement).appendChild(style);
     })();
   </script>
 </head>
@@ -77,16 +84,16 @@
 
       <div class="flex items-center gap-4">
         <div class="flex items-center gap-2">
-          <button id="lang-btn-en" onclick="setLang('en')" class="focus:outline-none" aria-label="English">
+          <button id="lang-btn-en" data-lang-switch="en" class="focus:outline-none" aria-label="English">
             <img id="flag-en-img" src="assets/us.png" alt="English" class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350" />
           </button>
           <span class="text-ink/10 select-none">/</span>
-          <button id="lang-btn-jp" onclick="setLang('jp')" class="focus:outline-none" aria-label="日本語">
+          <button id="lang-btn-jp" data-lang-switch="jp" class="focus:outline-none" aria-label="日本語">
             <img id="flag-jp-img" src="assets/jp.png" alt="日本語" class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350" />
           </button>
         </div>
 
-        <button onclick="toggleMobileMenu(true)" class="lg:hidden flex items-center justify-center p-2 text-ink/70 hover:text-crimson transition-all duration-300 focus:outline-none" aria-label="Toggle Menu">
+        <button data-mobile-menu-toggle="open" class="lg:hidden flex items-center justify-center p-2 text-ink/70 hover:text-crimson transition-all duration-300 focus:outline-none" aria-label="Toggle Menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
         </button>
       </div>
@@ -102,16 +109,16 @@
 
       <div class="flex items-center gap-4">
         <div class="flex items-center gap-2">
-          <button onclick="setLang('en')" class="focus:outline-none">
+          <button data-lang-switch="en" class="focus:outline-none">
             <img src="assets/us.png" alt="English" class="mobile-flag-en h-[18px] w-auto object-contain rounded-[2px] border border-ink/10" />
           </button>
           <span class="text-ink/10 select-none">/</span>
-          <button onclick="setLang('jp')" class="focus:outline-none">
+          <button data-lang-switch="jp" class="focus:outline-none">
             <img src="assets/jp.png" alt="日本語" class="mobile-flag-jp h-[18px] w-auto object-contain rounded-[2px] border border-ink/10" />
           </button>
         </div>
 
-        <button onclick="toggleMobileMenu(false)" class="p-2 text-ink/70 hover:text-crimson focus:outline-none" aria-label="Close Menu">
+        <button data-mobile-menu-toggle="close" class="p-2 text-ink/70 hover:text-crimson focus:outline-none" aria-label="Close Menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
         </button>
       </div>
@@ -219,7 +226,7 @@
         </div>
 
         <!-- Raw Active Form -->
-        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+        <form id="contact-form" class="space-y-5">
           
           <!-- Name Field -->
           <div>
@@ -280,75 +287,24 @@
   <footer class="border-t border-ink/10 pb-6">
     <div class="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
       <div class="text-left font-sans text-sm text-ink/75">
-        <span class="text-crimson">©</span> <span id="footer-year">2026</span> kamo, inc. ・Established 1991 ・Sakaki, Japan - All Rights Reserved
+        <span class="footer-line-1"><span class="text-crimson">©</span> <span id="footer-year">2026</span> kamo, inc. ・Established 1991</span> <span class="footer-line-2">・Sakaki, Japan - All Rights Reserved</span>
       </div>
       <div class="flex items-center gap-6">
-        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="text-ink/60 hover:text-crimson transition-colors duration-200">
+        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
         </a>
-        <a href="#" target="_blank" rel="noreferrer" aria-label="X (formerly Twitter)" class="text-ink/60 hover:text-crimson transition-colors duration-200">
+        <a href="#" target="_blank" rel="noreferrer" aria-label="X (formerly Twitter)" class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1">
           <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
           </svg>
         </a>
-        <a href="#" target="_blank" rel="noreferrer" aria-label="Facebook" class="text-ink/60 hover:text-crimson transition-colors duration-200">
+        <a href="#" target="_blank" rel="noreferrer" aria-label="Facebook" class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
         </a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  
-  <!-- Interactive Form Handling Vanilla JS logic -->
-  <script>
-    function handleContactSubmit(e) {
-      e.preventDefault();
-      
-      const form = document.getElementById("contact-form");
-      const successBlock = document.getElementById("contact-success-block");
-      
-      const nameVal = document.getElementById("form-name").value.trim();
-      const emailVal = document.getElementById("form-email").value.trim();
-      const messageVal = document.getElementById("form-message").value.trim();
-      
-      const errName = document.getElementById("error-name");
-      const errEmail = document.getElementById("error-email");
-      const errMessage = document.getElementById("error-message");
-      
-      let hasError = false;
-      
-      // Validate Name
-      if (nameVal.length === 0) {
-        errName.classList.remove("hidden");
-        hasError = true;
-      } else {
-        errName.classList.add("hidden");
-      }
-      
-      // Validate Email (simple matching)
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(emailVal)) {
-        errEmail.classList.remove("hidden");
-        hasError = true;
-      } else {
-        errEmail.classList.add("hidden");
-      }
-      
-      // Validate Message
-      if (messageVal.length < 5) {
-        errMessage.classList.remove("hidden");
-        hasError = true;
-      } else {
-        errMessage.classList.add("hidden");
-      }
-      
-      if (!hasError) {
-        // Success: hide form, show block
-        form.classList.add("hidden");
-        successBlock.classList.remove("hidden");
-      }
-    }
-  </script>
+  <script src="/js/main.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ const directories = [
   "./dist",
   "./dist/assets",
   "./dist/css",
-  "./dist/js"
+  "./dist/js",
 ];
 
 directories.forEach((dir) => {
@@ -64,7 +64,9 @@ try {
   // Compile to local css for dev
   execSync("npx -y @tailwindcss/cli -i src/styles.css -o css/styles.css", { stdio: "inherit" });
   // Compile to dist css for production
-  execSync("npx -y @tailwindcss/cli -i src/styles.css -o dist/css/styles.css", { stdio: "inherit" });
+  execSync("npx -y @tailwindcss/cli -i src/styles.css -o dist/css/styles.css", {
+    stdio: "inherit",
+  });
   console.log("CSS compile succeeded!");
 } catch (err) {
   console.error("CSS compile failed:", err);

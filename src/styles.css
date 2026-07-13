@@ -1,5 +1,6 @@
 @import "tailwindcss" source(none);
 @source "../src";
+@source "../*.html";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -180,6 +181,23 @@
   animation: logo-fade 1s ease-out 1s both;
 }
 
+@keyframes fuji-sun-rise {
+  0% {
+    transform: translateY(165px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-fuji-sun-rise {
+  animation: fuji-sun-rise 2.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -192,4 +210,51 @@
 }
 .animate-fade-up {
   animation: fade-up 0.8s ease-out both;
+}
+
+/* Tablet Portrait Spacing and Alignment adjustments */
+@media (max-width: 1024px) and (orientation: portrait) {
+  footer > div {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 1rem !important;
+  }
+  footer .text-left {
+    font-size: 0.75rem !important; /* text-xs (12px) */
+    white-space: nowrap !important;
+  }
+}
+
+/* Mobile Portrait Spacing and Alignment adjustments */
+@media (max-width: 767px) and (orientation: portrait) {
+  #hero-meter-section {
+    display: none !important;
+  }
+  #menu-cards-grid > * {
+    padding: 1.25rem !important;
+  }
+  #menu-cards-grid h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0.125rem !important;
+  }
+  #menu-cards-grid p {
+    line-height: 1.25 !important;
+  }
+  footer > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 0.5rem !important;
+  }
+  footer .footer-line-1,
+  footer .footer-line-2 {
+    display: block !important;
+  }
+  footer .text-left {
+    white-space: normal !important;
+    text-align: left !important;
+  }
 }

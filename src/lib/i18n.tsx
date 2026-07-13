@@ -45,11 +45,31 @@ const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("en");
   useEffect(() => {
-    const stored = typeof window !== "undefined" ? localStorage.getItem("kamo-lang") : null;
-    if (stored === "jp" || stored === "en") setLang(stored);
+    try {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage &&
+        typeof localStorage.getItem === "function"
+      ) {
+        const stored = localStorage.getItem("kamo-lang");
+        if (stored === "jp" || stored === "en") setLang(stored);
+      }
+    } catch (e) {
+      // Fallback silently when localStorage is restricted or blocked inside sandboxed iframe
+    }
   }, []);
   useEffect(() => {
-    if (typeof window !== "undefined") localStorage.setItem("kamo-lang", lang);
+    try {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage &&
+        typeof localStorage.setItem === "function"
+      ) {
+        localStorage.setItem("kamo-lang", lang);
+      }
+    } catch (e) {
+      // Fallback silently when localStorage is restricted or blocked inside sandboxed iframe
+    }
   }, [lang]);
   return <LangContext.Provider value={{ lang, setLang }}>{children}</LangContext.Provider>;
 }
