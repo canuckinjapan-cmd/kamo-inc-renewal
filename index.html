@@ -1,793 +1,1656 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="bg-[#F8FAFC]">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Kamo, Inc. — High-Tech Marketing Catalyst | Japan Market Entry</title>
-  <meta name="description" content="Kamo, Inc. facilitates cross-border high-tech business entry, international technology exchange, and strategic marketing partnerships between Western high-tech firms and the Japanese market from Sakaki-machi, Nagano Prefecture." />
-  <meta name="keywords" content="High-tech marketing consultancy Japan, international technology transfer, cross-border business catalyst, Nagano high-tech consultant, technology business entry Japan, Sakaki-machi, Nagano Prefecture" />
-  
-  <meta property="og:title" content="Kamo, Inc. — High-Tech Marketing Catalyst | Japan Market Entry" />
-  <meta property="og:description" content="Catalyzing cross-border high-tech business entry, international technology exchange, and strategic marketing partnerships between Western high-tech firms and the Japanese market." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://kamo.co.jp/" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kamo, Inc. — High-Tech Marketing Catalyst Partner in Japan" />
-  <meta name="twitter:description" content="Facilitating cross-border tech business entry, partnership matchmaking, and local market operations from Sakaki, Nagano, Japan." />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>Kamo, Inc. — High-Tech Marketing Catalyst | Japan Market Entry</title>
+    <meta
+      name="description"
+      content="Kamo, Inc. facilitates cross-border high-tech business entry, international technology exchange, and strategic marketing partnerships between Western high-tech firms and the Japanese market from Sakaki-machi, Nagano Prefecture."
+    />
+    <meta
+      name="keywords"
+      content="High-tech marketing consultancy Japan, international technology transfer, cross-border business catalyst, Nagano high-tech consultant, technology business entry Japan, Sakaki-machi, Nagano Prefecture"
+    />
 
-  <!-- Production compiled Tailwind v4 layout CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
+    <meta
+      property="og:title"
+      content="Kamo, Inc. — High-Tech Marketing Catalyst | Japan Market Entry"
+    />
+    <meta
+      property="og:description"
+      content="Catalyzing cross-border high-tech business entry, international technology exchange, and strategic marketing partnerships between Western high-tech firms and the Japanese market."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kamo.co.jp/" />
 
-  <!-- Custom Responsive Spacing for Tablet Portrait -->
-  <style>
-    @media (max-width: 1024px) and (orientation: portrait) {
-      #hero-section {
-        min-height: 580px !important;
-        max-height: 640px !important;
-      }
-      #hero-content-container {
-        margin-top: auto !important;
-        margin-bottom: auto !important;
-        padding-top: 1rem !important;
-        padding-bottom: 3rem !important;
-      }
-      #hero-meter-section {
-        margin-top: auto !important;
-      }
-      #menu-cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      }
-      #crest-card {
-        display: flex !important;
-      }
-    }
-    @media (max-width: 950px) and (orientation: landscape) {
-      #menu-cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      }
-      #crest-card {
-        display: flex !important;
-      }
-    }
-  </style>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Kamo, Inc. — High-Tech Marketing Catalyst Partner in Japan"
+    />
+    <meta
+      name="twitter:description"
+      content="Facilitating cross-border tech business entry, partnership matchmaking, and local market operations from Sakaki, Nagano, Japan."
+    />
 
-  <!-- Pre-render language handler (Flicker-Free execution) -->
-  <script>
-    (function() {
-      var lang = "en";
-      try {
-        if (typeof localStorage !== "undefined" && localStorage && typeof localStorage.getItem === "function") {
-          lang = localStorage.getItem("kamo-lang") || "en";
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Production compiled Tailwind v4 layout CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Custom Responsive Spacing for Tablet Portrait -->
+    <style>
+      @media (max-width: 1024px) and (orientation: portrait) {
+        #hero-section {
+          min-height: 820px !important;
+          max-height: none !important;
         }
-      } catch (e) {
-        // Falls back silently when localStorage is restricted or blocked inside sandboxed iframe
+        #hero-content-container {
+          margin-top: auto !important;
+          margin-bottom: auto !important;
+          padding-top: 1rem !important;
+          padding-bottom: 3rem !important;
+        }
+        #hero-meter-section {
+          margin-top: auto !important;
+        }
+        #menu-cards-grid {
+          grid-template-columns: 1fr !important;
+        }
+        #crest-card {
+          display: none !important;
+        }
       }
-      document.documentElement.setAttribute("lang", lang);
-      var style = document.createElement("style");
-      style.id = "lang-loader-style";
-      if (lang === "en") {
-        style.textContent = `
+      @media (max-width: 950px) and (orientation: landscape) {
+        #menu-cards-grid {
+          grid-template-columns: 1fr !important;
+        }
+        #crest-card {
+          display: none !important;
+        }
+      }
+    </style>
+
+    <!-- Pre-render language handler (Flicker-Free execution) -->
+    <script>
+      (function () {
+        var lang = "en";
+        try {
+          if (
+            typeof localStorage !== "undefined" &&
+            localStorage &&
+            typeof localStorage.getItem === "function"
+          ) {
+            lang = localStorage.getItem("kamo-lang") || "en";
+          }
+        } catch (e) {
+          // Falls back silently when localStorage is restricted or blocked inside sandboxed iframe
+        }
+        document.documentElement.setAttribute("lang", lang);
+        var style = document.createElement("style");
+        style.id = "lang-loader-style";
+        if (lang === "en") {
+          style.textContent = `
           .lang-jp { display: none !important; }
           .lang-en { display: inline-block; }
           p.lang-en, div.lang-en, section.lang-en, h1.lang-en, h2.lang-en, h3.lang-en { display: block; }
         `;
-      } else {
-        style.textContent = `
+        } else {
+          style.textContent = `
           .lang-en { display: none !important; }
           .lang-jp { display: inline-block; }
           p.lang-jp, div.lang-jp, section.lang-jp, h1.lang-jp, h2.lang-jp, h3.lang-jp { display: block; }
         `;
-      }
-      (document.head || document.getElementsByTagName("head")[0] || document.documentElement).appendChild(style);
-    })();
-  </script>
-</head>
-<body class="bg-[#F8FAFC] text-ink font-sans font-semibold">
+        }
+        (
+          document.head ||
+          document.getElementsByTagName("head")[0] ||
+          document.documentElement
+        ).appendChild(style);
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F8FAFC] text-ink font-sans font-semibold">
+    <!-- Site Header -->
+    <header
+      id="site-header"
+      class="sticky top-0 z-50 backdrop-blur-md bg-paper/80 border-b border-transparent transition-all duration-300"
+    >
+      <div class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between gap-6">
+        <a href="index.html" class="flex items-center gap-3 group relative">
+          <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
+          <div
+            id="return-to-top-tooltip"
+            class="absolute top-[125%] left-0 z-50 rounded-md bg-crimson px-2.5 py-1 text-[9px] font-sans font-medium tracking-[0.16em] text-white uppercase whitespace-nowrap shadow-md opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none"
+          >
+            <div
+              class="absolute top-0 left-5 h-1.5 w-1.5 -translate-y-[40%] rotate-45 bg-crimson"
+            ></div>
+            <span class="lang-en">Return to top</span>
+            <span class="lang-jp hidden" lang="ja">トップに戻る</span>
+          </div>
+        </a>
 
-  <!-- Site Header -->
-  <header id="site-header" class="sticky top-0 z-50 backdrop-blur-md bg-paper/80 border-b border-transparent transition-all duration-300">
-    <div class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between gap-6">
-      <a href="index.html" class="flex items-center gap-3 group relative">
-        <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
-        <div id="return-to-top-tooltip" class="absolute top-[125%] left-0 z-50 rounded-md bg-crimson px-2.5 py-1 text-[9px] font-sans font-medium tracking-[0.16em] text-white uppercase whitespace-nowrap shadow-md opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-          <div class="absolute top-0 left-5 h-1.5 w-1.5 -translate-y-[40%] rotate-45 bg-crimson"></div>
-          <span class="lang-en">Return to top</span>
-          <span class="lang-jp hidden" lang="ja">トップに戻る</span>
-        </div>
-      </a>
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden lg:flex items-center gap-7 text-[13px] tracking-[0.18em] uppercase">
+          <a
+            href="bio.html"
+            id="nav-bio"
+            class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
+          >
+            <span class="lang-en">Bio</span>
+            <span class="lang-jp hidden" lang="ja">経歴</span>
+          </a>
+          <a
+            href="services.html"
+            id="nav-services"
+            class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
+          >
+            <span class="lang-en">Services</span>
+            <span class="lang-jp hidden" lang="ja">業務内容</span>
+          </a>
+          <a
+            href="experience.html"
+            id="nav-experience"
+            class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
+          >
+            <span class="lang-en">Experience</span>
+            <span class="lang-jp hidden" lang="ja">実績</span>
+          </a>
+          <a
+            href="resources.html"
+            id="nav-resources"
+            class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
+          >
+            <span class="lang-en">Resources</span>
+            <span class="lang-jp hidden" lang="ja">資料</span>
+          </a>
+          <a
+            href="contact.html"
+            id="nav-contact"
+            class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
+          >
+            <span class="lang-en">Contact</span>
+            <span class="lang-jp hidden" lang="ja">お問い合わせ</span>
+          </a>
+        </nav>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-7 text-[13px] tracking-[0.18em] uppercase">
-        <a href="bio.html" id="nav-bio" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
-          <span class="lang-en">Bio</span>
-          <span class="lang-jp hidden" lang="ja">経歴</span>
-        </a>
-        <a href="services.html" id="nav-services" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
-          <span class="lang-en">Services</span>
-          <span class="lang-jp hidden" lang="ja">業務内容</span>
-        </a>
-        <a href="experience.html" id="nav-experience" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
-          <span class="lang-en">Experience</span>
-          <span class="lang-jp hidden" lang="ja">実績</span>
-        </a>
-        <a href="resources.html" id="nav-resources" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
-          <span class="lang-en">Resources</span>
-          <span class="lang-jp hidden" lang="ja">資料</span>
-        </a>
-        <a href="contact.html" id="nav-contact" class="text-ink/70 hover:text-crimson hover:font-black transition-all duration-200">
-          <span class="lang-en">Contact</span>
-          <span class="lang-jp hidden" lang="ja">お問い合わせ</span>
-        </a>
-      </nav>
+        <!-- Language selector controls -->
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <button
+              id="lang-btn-en"
+              data-lang-switch="en"
+              class="focus:outline-none"
+              aria-label="English"
+            >
+              <img
+                id="flag-en-img"
+                src="assets/us.png"
+                alt="English"
+                class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-100 opacity-100 cursor-default"
+              />
+            </button>
+            <span class="text-ink/10 select-none">/</span>
+            <button
+              id="lang-btn-jp"
+              data-lang-switch="jp"
+              class="focus:outline-none"
+              aria-label="日本語"
+            >
+              <img
+                id="flag-jp-img"
+                src="assets/jp.png"
+                alt="日本語"
+                class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-75 opacity-70 hover:brightness-100 hover:opacity-100 cursor-pointer"
+              />
+            </button>
+          </div>
 
-      <!-- Language selector controls -->
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-2">
-          <button id="lang-btn-en" data-lang-switch="en" class="focus:outline-none" aria-label="English">
-            <img id="flag-en-img" src="assets/us.png" alt="English" class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-100 opacity-100 cursor-default" />
+          <!-- Hamburger Menu Button -->
+          <button
+            data-mobile-menu-toggle="open"
+            class="lg:hidden flex items-center justify-center p-2 text-ink/70 hover:text-crimson transition-all duration-300 focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-menu"
+            >
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
           </button>
-          <span class="text-ink/10 select-none">/</span>
-          <button id="lang-btn-jp" data-lang-switch="jp" class="focus:outline-none" aria-label="日本語">
-            <img id="flag-jp-img" src="assets/jp.png" alt="日本語" class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-75 opacity-70 hover:brightness-100 hover:opacity-100 cursor-pointer" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-[#FAF7F2]/98 flex flex-col lg:hidden transition-all duration-300 hidden overflow-y-auto"
+    >
+      <div
+        class="mx-auto w-full max-w-7xl px-6 h-16 flex items-center justify-between gap-6 border-b border-ink/5 bg-paper shrink-0"
+      >
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
+        </a>
+
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <button data-lang-switch="en" class="focus:outline-none">
+              <img
+                src="assets/us.png"
+                alt="English"
+                class="mobile-flag-en h-[18px] w-auto object-contain rounded-[2px] border border-ink/10"
+              />
+            </button>
+            <span class="text-ink/10 select-none">/</span>
+            <button data-lang-switch="jp" class="focus:outline-none">
+              <img
+                src="assets/jp.png"
+                alt="日本語"
+                class="mobile-flag-jp h-[18px] w-auto object-contain rounded-[2px] border border-ink/10"
+              />
+            </button>
+          </div>
+
+          <button
+            data-mobile-menu-toggle="close"
+            class="p-2 text-ink/70 hover:text-crimson focus:outline-none"
+            aria-label="Close Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-x"
+            >
+              <line x1="18" x2="6" y1="6" y2="18"></line>
+              <line x1="6" x2="18" y1="6" y2="18"></line>
+            </svg>
           </button>
         </div>
+      </div>
 
-        <!-- Hamburger Menu Button -->
-        <button data-mobile-menu-toggle="open" class="lg:hidden flex items-center justify-center p-2 text-ink/70 hover:text-crimson transition-all duration-300 focus:outline-none" aria-label="Toggle Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
-        </button>
+      <div
+        class="flex-1 flex flex-col justify-start py-6 pt-12 md:pt-20 px-8 md:px-12 space-y-6 landscape:space-y-4 bg-paper min-h-[300px]"
+      >
+        <div class="space-y-5 landscape:space-y-3 max-w-sm mx-auto w-full">
+          <a
+            href="bio.html"
+            class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
+          >
+            <div class="flex items-baseline gap-4">
+              <span class="font-mono text-[10px] text-ink/40">01</span>
+              <span
+                class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
+              >
+                <span class="lang-en">Bio</span>
+                <span class="lang-jp hidden" lang="ja">経歴</span>
+              </span>
+            </div>
+            <span
+              class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors"
+              >→</span
+            >
+          </a>
+          <a
+            href="services.html"
+            class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
+          >
+            <div class="flex items-baseline gap-4">
+              <span class="font-mono text-[10px] text-ink/40">02</span>
+              <span
+                class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
+              >
+                <span class="lang-en">Services</span>
+                <span class="lang-jp hidden" lang="ja">業務内容</span>
+              </span>
+            </div>
+            <span
+              class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors"
+              >→</span
+            >
+          </a>
+          <a
+            href="experience.html"
+            class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
+          >
+            <div class="flex items-baseline gap-4">
+              <span class="font-mono text-[10px] text-ink/40">03</span>
+              <span
+                class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
+              >
+                <span class="lang-en">Experience</span>
+                <span class="lang-jp hidden" lang="ja">実績</span>
+              </span>
+            </div>
+            <span
+              class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors"
+              >→</span
+            >
+          </a>
+          <a
+            href="resources.html"
+            class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
+          >
+            <div class="flex items-baseline gap-4">
+              <span class="font-mono text-[10px] text-ink/40">04</span>
+              <span
+                class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
+              >
+                <span class="lang-en">Resources</span>
+                <span class="lang-jp hidden" lang="ja">資料</span>
+              </span>
+            </div>
+            <span
+              class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors"
+              >→</span
+            >
+          </a>
+          <a
+            href="contact.html"
+            class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
+          >
+            <div class="flex items-baseline gap-4">
+              <span class="font-mono text-[10px] text-ink/40">05</span>
+              <span
+                class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
+              >
+                <span class="lang-en">Contact</span>
+                <span class="lang-jp hidden" lang="ja">お問い合わせ</span>
+              </span>
+            </div>
+            <span
+              class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors"
+              >→</span
+            >
+          </a>
+        </div>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile Drawer Overlay Menu -->
-  <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#FAF7F2]/98 flex flex-col lg:hidden transition-all duration-300 hidden overflow-y-auto">
-    <div class="mx-auto w-full max-w-7xl px-6 h-16 flex items-center justify-between gap-6 border-b border-ink/5 bg-paper shrink-0">
-      <a href="index.html" class="flex items-center gap-3">
-        <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
-      </a>
+    <main>
+      <!-- Hero / Rising Sun Section -->
+      <section
+        id="hero-section"
+        class="relative min-h-[88vh] landscape:min-h-[520px] md:landscape:min-h-[88vh] flex flex-col justify-between items-center overflow-hidden bg-[#FBF9F3] pt-6 pb-0 landscape:pt-6 landscape:pb-0 md:landscape:py-0"
+      >
+        <!-- Traditional Sumi-e Watercolor Background -->
+        <div
+          id="hero-background-parallax"
+          class="absolute inset-0 w-full h-full z-0 overflow-hidden select-none pointer-events-none origin-top"
+          aria-hidden="true"
+          style="transform: scale(1.15)"
+        >
+          <svg
+            viewBox="0 0 1440 900"
+            preserveAspectRatio="xMidYMax slice"
+            class="w-full h-full object-cover"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <defs>
+              <!-- Sky Gradient (Traditional warm wash on aged paper) -->
+              <linearGradient id="sumieSkyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FCF6EC" />
+                <stop offset="35%" stop-color="#FCECE1" />
+                <stop offset="70%" stop-color="#FAF1E6" />
+                <stop offset="100%" stop-color="#F5EADF" />
+              </linearGradient>
 
-      <div class="flex items-center gap-4">
-        <div class="flex items-center gap-2">
-          <button data-lang-switch="en" class="focus:outline-none">
-            <img src="assets/us.png" alt="English" class="mobile-flag-en h-[18px] w-auto object-contain rounded-[2px] border border-ink/10" />
-          </button>
-          <span class="text-ink/10 select-none">/</span>
-          <button data-lang-switch="jp" class="focus:outline-none">
-            <img src="assets/jp.png" alt="日本語" class="mobile-flag-jp h-[18px] w-auto object-contain rounded-[2px] border border-ink/10" />
-          </button>
-        </div>
+              <!-- Soft warm ambient rose wash bleed -->
+              <radialGradient id="washPinkGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#EAA69C" stop-opacity="0.25" />
+                <stop offset="60%" stop-color="#F4BFB7" stop-opacity="0.08" />
+                <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
+              </radialGradient>
 
-        <button data-mobile-menu-toggle="close" class="p-2 text-ink/70 hover:text-crimson focus:outline-none" aria-label="Close Menu">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
-        </button>
-      </div>
-    </div>
+              <!-- Warm watercolor ruby rising sun gradient -->
+              <radialGradient id="sumieSunGrad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#AC1C24" />
+                <stop offset="65%" stop-color="#C92A32" />
+                <stop offset="85%" stop-color="#EA5256" />
+                <stop offset="100%" stop-color="#F28D90" stop-opacity="0" />
+              </radialGradient>
 
-    <div class="flex-1 flex flex-col justify-start py-6 pt-12 md:pt-20 px-8 md:px-12 space-y-6 landscape:space-y-4 bg-paper min-h-[300px]">
-      <div class="space-y-5 landscape:space-y-3 max-w-sm mx-auto w-full">
-        <a href="bio.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
-          <div class="flex items-baseline gap-4">
-            <span class="font-mono text-[10px] text-ink/40">01</span>
-            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
-              <span class="lang-en">Bio</span>
-              <span class="lang-jp hidden" lang="ja">経歴</span>
-            </span>
-          </div>
-          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
-        </a>
-        <a href="services.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
-          <div class="flex items-baseline gap-4">
-            <span class="font-mono text-[10px] text-ink/40">02</span>
-            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
-              <span class="lang-en">Services</span>
-              <span class="lang-jp hidden" lang="ja">業務内容</span>
-            </span>
-          </div>
-          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
-        </a>
-        <a href="experience.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
-          <div class="flex items-baseline gap-4">
-            <span class="font-mono text-[10px] text-ink/40">03</span>
-            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
-              <span class="lang-en">Experience</span>
-              <span class="lang-jp hidden" lang="ja">実績</span>
-            </span>
-          </div>
-          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
-        </a>
-        <a href="resources.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
-          <div class="flex items-baseline gap-4">
-            <span class="font-mono text-[10px] text-ink/40">04</span>
-            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
-              <span class="lang-en">Resources</span>
-              <span class="lang-jp hidden" lang="ja">資料</span>
-            </span>
-          </div>
-          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
-        </a>
-        <a href="contact.html" class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300">
-          <div class="flex items-baseline gap-4">
-            <span class="font-mono text-[10px] text-ink/40">05</span>
-            <span class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200">
-              <span class="lang-en">Contact</span>
-              <span class="lang-jp hidden" lang="ja">お問い合わせ</span>
-            </span>
-          </div>
-          <span class="text-xs font-mono text-ink/30 group-hover:text-crimson/50 transition-colors">→</span>
-        </a>
-      </div>
-    </div>
-  </div>
+              <!-- Ink Wash Gradients for Mt. Fuji and background mountains -->
+              <linearGradient id="washLightGray" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6F7C85" stop-opacity="0.85" />
+                <stop offset="50%" stop-color="#8C9AA3" stop-opacity="0.65" />
+                <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
+              </linearGradient>
 
-  <main>
-    <!-- Hero / Rising Sun Section -->
-    <section id="hero-section" class="relative min-h-[88vh] landscape:min-h-[520px] md:landscape:min-h-[88vh] flex flex-col justify-between items-center overflow-hidden bg-[#FBF9F3] pt-6 pb-0 landscape:pt-6 landscape:pb-0 md:landscape:py-0">
-      
-      <!-- Traditional Sumi-e Watercolor Background -->
-      <div id="hero-background-parallax" class="absolute inset-0 w-full h-full z-0 overflow-hidden select-none pointer-events-none origin-top" aria-hidden="true" style="transform: scale(1.15);">
-        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <defs>
-            <!-- Sky Gradient (Traditional warm wash on aged paper) -->
-            <linearGradient id="sumieSkyGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FCF6EC" />
-              <stop offset="35%" stop-color="#FCECE1" />
-              <stop offset="70%" stop-color="#FAF1E6" />
-              <stop offset="100%" stop-color="#F5EADF" />
-            </linearGradient>
-            
-            <!-- Soft warm ambient rose wash bleed -->
-            <radialGradient id="washPinkGrad" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#EAA69C" stop-opacity="0.25" />
-              <stop offset="60%" stop-color="#F4BFB7" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
-            </radialGradient>
+              <linearGradient id="washMidGray" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3C4852" />
+                <stop offset="55%" stop-color="#5B6C7A" />
+                <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
+              </linearGradient>
 
-            <!-- Warm watercolor ruby rising sun gradient -->
-            <radialGradient id="sumieSunGrad" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#AC1C24" />
-              <stop offset="65%" stop-color="#C92A32" />
-              <stop offset="85%" stop-color="#EA5256" />
-              <stop offset="100%" stop-color="#F28D90" stop-opacity="0" />
-            </radialGradient>
+              <linearGradient id="washDarkGray" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#14191E" />
+                <stop offset="65%" stop-color="#2C3742" />
+                <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
+              </linearGradient>
 
-            <!-- Ink Wash Gradients for Mt. Fuji and background mountains -->
-            <linearGradient id="washLightGray" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#6F7C85" stop-opacity="0.85" />
-              <stop offset="50%" stop-color="#8C9AA3" stop-opacity="0.65" />
-              <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
-            </linearGradient>
+              <linearGradient id="sumieMistGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FAF1E6" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
+              </linearGradient>
 
-            <linearGradient id="washMidGray" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#3C4852" />
-              <stop offset="55%" stop-color="#5B6C7A" />
-              <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
-            </linearGradient>
+              <!-- Authentic Japanese ink fluid-dynamics & bleeding filters -->
 
-            <linearGradient id="washDarkGray" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#14191E" />
-              <stop offset="65%" stop-color="#2C3742" />
-              <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
-            </linearGradient>
+              <!-- 1. The grand crimson-red sun filter: Soft, glowing, watercolor haze that bleeds naturally -->
+              <filter id="sunHazeEffect" x="-45%" y="-45%" width="190%" height="190%">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.006"
+                  numOctaves="3"
+                  result="noise"
+                />
+                <feDisplacementMap
+                  in="SourceGraphic"
+                  in2="noise"
+                  scale="10"
+                  xChannelSelector="R"
+                  yChannelSelector="G"
+                  result="displaced"
+                />
+                <feGaussianBlur in="displaced" stdDeviation="12" result="hugeBlur" />
+                <feGaussianBlur in="displaced" stdDeviation="2" result="coreBlur" />
+                <feMerge>
+                  <feMergeNode in="hugeBlur" />
+                  <feMergeNode in="SourceGraphic" opacity="0.75" />
+                  <feMergeNode in="coreBlur" />
+                </feMerge>
+              </filter>
 
-            <linearGradient id="sumieMistGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#FAF1E6" stop-opacity="0.95" />
-              <stop offset="100%" stop-color="#FAF1E6" stop-opacity="0" />
-            </linearGradient>
+              <!-- 2. Sumi-e Mountains and Hills: extremely soft, watered-down water-wash bleed -->
+              <filter id="fujiWashEffect" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.012"
+                  numOctaves="4"
+                  result="noise"
+                />
+                <feDisplacementMap
+                  in="SourceGraphic"
+                  in2="noise"
+                  scale="32"
+                  xChannelSelector="R"
+                  yChannelSelector="G"
+                  result="displaced"
+                />
+                <feGaussianBlur in="displaced" stdDeviation="7" result="blurred" />
+                <feComponentTransfer in="blurred" result="boosted">
+                  <feFuncA type="linear" slope="1.3" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode in="boosted" />
+                  <feMergeNode in="displaced" opacity="0.25" />
+                </feMerge>
+              </filter>
 
-            <!-- Authentic Japanese ink fluid-dynamics & bleeding filters -->
-            
-            <!-- 1. The grand crimson-red sun filter: Soft, glowing, watercolor haze that bleeds naturally -->
-            <filter id="sunHazeEffect" x="-45%" y="-45%" width="190%" height="190%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="3" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-              <feGaussianBlur in="displaced" stdDeviation="12" result="hugeBlur" />
-              <feGaussianBlur in="displaced" stdDeviation="2" result="coreBlur" />
-              <feMerge>
-                <feMergeNode in="hugeBlur" />
-                <feMergeNode in="SourceGraphic" opacity="0.75" />
-                <feMergeNode in="coreBlur" />
-              </feMerge>
-            </filter>
+              <!-- 3. Dry branch brush filter: simulates actual wild hair-stroke scratches on rough paper -->
+              <filter id="branchBrushEffect" x="-10%" y="-10%" width="120%" height="120%">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.08"
+                  numOctaves="5"
+                  result="noise"
+                />
+                <feDisplacementMap
+                  in="SourceGraphic"
+                  in2="noise"
+                  scale="14"
+                  xChannelSelector="R"
+                  yChannelSelector="G"
+                  result="displaced"
+                />
+                <feGaussianBlur in="displaced" stdDeviation="0.8" result="dry" />
+                <feMerge>
+                  <feMergeNode in="dry" />
+                  <feMergeNode in="SourceGraphic" opacity="0.15" />
+                </feMerge>
+              </filter>
 
-            <!-- 2. Sumi-e Mountains and Hills: extremely soft, watered-down water-wash bleed -->
-            <filter id="fujiWashEffect" x="-20%" y="-20%" width="140%" height="140%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="32" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-              <feGaussianBlur in="displaced" stdDeviation="7" result="blurred" />
-              <feComponentTransfer in="blurred" result="boosted">
-                <feFuncA type="linear" slope="1.3" />
-              </feComponentTransfer>
-              <feMerge>
-                <feMergeNode in="boosted" />
-                <feMergeNode in="displaced" opacity="0.25" />
-              </feMerge>
-            </filter>
+              <!-- 4. Soft pink cherry blossoms: Watercolor splash where pigment expands into paper fibres -->
+              <filter id="blossomSplashEffect" x="-50%" y="-50%" width="200%" height="200%">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.04"
+                  numOctaves="4"
+                  result="noise"
+                />
+                <feDisplacementMap
+                  in="SourceGraphic"
+                  in2="noise"
+                  scale="18"
+                  xChannelSelector="R"
+                  yChannelSelector="G"
+                  result="displaced"
+                />
+                <feGaussianBlur in="displaced" stdDeviation="5" result="blurred" />
+                <feComponentTransfer in="blurred" result="boosted">
+                  <feFuncA type="linear" slope="1.4" />
+                </feComponentTransfer>
+                <feMerge>
+                  <feMergeNode in="boosted" />
+                  <feMergeNode in="displaced" opacity="0.15" />
+                </feMerge>
+              </filter>
 
-            <!-- 3. Dry branch brush filter: simulates actual wild hair-stroke scratches on rough paper -->
-            <filter id="branchBrushEffect" x="-10%" y="-10%" width="120%" height="120%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="5" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-              <feGaussianBlur in="displaced" stdDeviation="0.8" result="dry" />
-              <feMerge>
-                <feMergeNode in="dry" />
-                <feMergeNode in="SourceGraphic" opacity="0.15" />
-              </feMerge>
-            </filter>
+              <!-- Paper structural overlay texture -->
+              <filter id="paperFiber" x="0%" y="0%" width="100%" height="100%">
+                <feTurbulence
+                  type="fractalNoise"
+                  baseFrequency="0.04"
+                  numOctaves="3"
+                  result="rawNoise"
+                />
+                <feColorMatrix
+                  type="matrix"
+                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0"
+                />
+                <feComposite operator="over" in2="SourceGraphic" />
+              </filter>
 
-            <!-- 4. Soft pink cherry blossoms: Watercolor splash where pigment expands into paper fibres -->
-            <filter id="blossomSplashEffect" x="-50%" y="-50%" width="200%" height="200%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="18" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-              <feGaussianBlur in="displaced" stdDeviation="5" result="blurred" />
-              <feComponentTransfer in="blurred" result="boosted">
-                <feFuncA type="linear" slope="1.4" />
-              </feComponentTransfer>
-              <feMerge>
-                <feMergeNode in="boosted" />
-                <feMergeNode in="displaced" opacity="0.15" />
-              </feMerge>
-            </filter>
+              <!-- 5. Mountain Mask - to place the sun behind Mount Fuji's slope -->
+              <mask id="mountainMask">
+                <rect width="1440" height="900" fill="white" />
+                <!-- Exact tracing of Fuji slope in sumie_background.jpg -->
+                <path
+                  d="M 0,900 L 0,450 Q 600,450 760,284 Q 850,290 1000,400 L 1050,425 L 1100,455 L 1150,490 L 1200,525 L 1250,560 L 1300,595 L 1440,700 L 1440,900 Z"
+                  fill="black"
+                />
+              </mask>
+            </defs>
 
-            <!-- Paper structural overlay texture -->
-            <filter id="paperFiber" x="0%" y="0%" width="100%" height="100%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="rawNoise" />
-              <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.04 0" />
-              <feComposite operator="over" in2="SourceGraphic" />
-            </filter>
+            <!-- 1. Authentic Sumi-e Image Background -->
+            <image
+              href="assets/sumie_background.jpg"
+              xlink:href="assets/sumie_background.jpg"
+              opacity="0.13"
+              x="0"
+              y="0"
+              width="1440"
+              height="900"
+              preserveAspectRatio="xMidYMid slice"
+            />
 
-            <!-- 5. Mountain Mask - to place the sun behind Mount Fuji's slope -->
-            <mask id="mountainMask">
-              <rect width="1440" height="900" fill="white" />
-              <!-- Exact tracing of Fuji slope in sumie_background.jpg -->
-              <path d="M 0,900 L 0,450 Q 600,450 760,284 Q 850,290 1000,400 L 1050,425 L 1100,455 L 1150,490 L 1200,525 L 1250,560 L 1300,595 L 1440,700 L 1440,900 Z" fill="black" />
-            </mask>
-          </defs>
-
-          <!-- 1. Authentic Sumi-e Image Background -->
-          <image href="assets/sumie_background.jpg" xlink:href="assets/sumie_background.jpg" opacity="0.13" x="0" y="0" width="1440" height="900" preserveAspectRatio="xMidYMid slice" />
-
-          <!-- 2. The Animated Crimson Sun rising behind Fuji with blend-mode multiply and masked -->
-          <g mask="url(#mountainMask)" style="mix-blend-mode: multiply;">
-            <g class="animate-fuji-sun-rise" filter="url(#sunHazeEffect)">
-              <circle cx="1000" cy="320" r="145" fill="url(#sumieSunGrad)" opacity="0.10" />
+            <!-- 2. The Animated Crimson Sun rising behind Fuji with blend-mode multiply and masked -->
+            <g mask="url(#mountainMask)" style="mix-blend-mode: multiply">
+              <g class="animate-fuji-sun-rise" filter="url(#sunHazeEffect)">
+                <circle cx="1000" cy="320" r="145" fill="url(#sumieSunGrad)" opacity="0.10" />
+              </g>
             </g>
-          </g>
-        </svg>
-      </div>
-
-      <div id="hero-content-container" class="relative z-10 text-center px-6 max-w-4xl my-auto py-12 md:py-16 flex flex-col justify-center items-center">
-        <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="mx-auto w-full max-w-[530px] landscape:max-w-[300px] md:landscape:max-w-[530px] h-auto animate-logo-fade drop-shadow-[0_0_18px_rgba(248,250,252,0.85)]" style="filter: drop-shadow(0 1px 0 rgba(255,255,255,0.9)) drop-shadow(0 0 20px rgba(248,250,252,0.7));" />
-        
-        <!-- Tagline -->
-        <p class="mt-10 mx-auto max-w-[640px] font-serif text-xl md:text-2xl leading-snug text-[#0F172A] animate-logo-fade" style="animation-delay: 1.4s;">
-          <span class="lang-en">Consultant for multinationals, startups, and academic organizations on IT business development projects to leverage innovative technology products and services in the Japanese market.</span>
-          <span class="lang-jp hidden" lang="ja">多国籍企業、スタートアップ、学術機関を対象に、日本市場において革新的な技術製品やサービスを活用するためのIT事業開発プロジェクトに関するコンサルティングを行う。</span>
-        </p>
-
-        <!-- Subtitle -->
-        <p class="mt-6 text-[13px] tracking-[0.18em] uppercase text-[#0F172A]/50 animate-logo-fade font-normal" style="animation-delay: 1.7s;">
-          <span class="lang-en">Established 1991 · Japan</span>
-          <span class="lang-jp hidden" lang="ja">1991年設立 · 日本</span>
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 animate-logo-fade" style="animation-delay: 1.9s;">
-          <a href="contact.html" class="w-full sm:w-auto inline-flex items-center justify-center bg-crimson hover:bg-crimson/90 text-[13px] md:text-[14px] font-sans font-medium text-white px-8 py-4 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.05] sm:origin-right">
-            <span class="lang-en">Schedule Strategy Consultation</span>
-            <span class="lang-jp hidden" lang="ja">戦略コンサルティング相談を予約する</span>
-          </a>
-          <a href="experience.html" class="w-full sm:w-auto inline-flex items-center justify-center border border-[#0F172A]/20 hover:border-crimson text-[13px] md:text-[14px] font-sans font-medium text-[#0F172A] hover:text-crimson px-8 py-4 transition-all duration-300 bg-white hover:-translate-y-0.5 hover:scale-[1.05] sm:origin-left">
-            <span class="lang-en">View Case Studies</span>
-            <span class="lang-jp hidden" lang="ja">実例・ケーススタディを見る</span>
-          </a>
+          </svg>
         </div>
-      </div>
 
-      <!-- Meter Section -->
-      <div id="hero-meter-section" class="relative z-20 w-full border-y border-[#0F172A]/10 bg-white/30 backdrop-blur-xs py-4 md:py-5 mt-auto animate-logo-fade" style="animation-delay: 2.1s;">
-        <div class="mx-auto max-w-7xl px-6">
-          <div class="grid grid-cols-3 gap-4 text-center">
-            
-            <!-- Carbon Neutral -->
-            <div class="flex flex-col items-center justify-center px-2">
-              <span class="font-sans font-semibold text-2xl sm:text-3xl md:text-[35px] text-[#0F172A] tracking-tight" id="stat-carbon">100%</span>
-              <span class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]">
-                <span class="lang-en">Carbon Neutral Company</span>
-                <span class="lang-jp hidden" lang="ja">カーボンニュートラル企業</span>
-              </span>
+        <div
+          id="hero-content-container"
+          class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 my-auto py-8 md:py-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center"
+        >
+          <!-- Left Column: Origami Duck Image -->
+          <div
+            class="lg:col-span-5 flex justify-center items-center animate-logo-fade"
+            style="animation-delay: 0.5s"
+          >
+            <div
+              class="relative w-full max-w-[320px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-none"
+            >
+              <img
+                src="src/assets/Kamo-inc-duck-origami01.png"
+                alt="Kamo Origami Duck"
+                class="w-full h-auto drop-shadow-md select-none pointer-events-none"
+                referrerpolicy="no-referrer"
+              />
             </div>
+          </div>
 
-            <!-- Years of Experience -->
-            <div class="flex flex-col items-center justify-center px-2">
-              <span class="font-sans font-semibold text-2xl sm:text-3xl md:text-[35px] text-[#0F172A] tracking-tight" id="stat-experience">35+</span>
-              <span class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]">
-                <span class="lang-en">Years of Experience</span>
-                <span class="lang-jp hidden" lang="ja">35年以上の経験実績</span>
-              </span>
+          <!-- Right Column: Text Content -->
+          <div
+            class="lg:col-span-7 flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
+          >
+            <!-- H1 Hero Title -->
+            <h1
+              class="font-sans font-bold text-3xl sm:text-4xl md:text-[45px] leading-[1.15] text-[#0F172A] tracking-tight animate-logo-fade animate-duration-1000"
+              style="animation-delay: 0.9s"
+            >
+              <span class="lang-en"
+                >Japan market entry and business development for high-tech organizations.</span
+              >
+              <span class="lang-jp hidden" lang="ja"
+                >ハイテク企業のための日本市場参入とビジネス開発。</span
+              >
+            </h1>
+
+            <!-- Hero Subheading -->
+            <p
+              class="mt-6 font-serif text-base sm:text-lg md:text-[19px] leading-relaxed text-[#0F172A]/90 lg:max-w-[580px] animate-logo-fade"
+              style="animation-delay: 1.3s"
+            >
+              <span class="lang-en"
+                >Kamo helps multinationals, startups, and research-driven organizations build
+                partnerships, validate opportunities, and grow in the Japanese market.</span
+              >
+              <span class="lang-jp hidden" lang="ja"
+                >Kamo（鴨）は、多国籍企業、スタートアップ、研究主導型の組織が、日本市場においてパートナーシップを構築し、機会を検証し、成長するのを支援します。</span
+              >
+            </p>
+
+            <!-- CTA Buttons -->
+            <div
+              class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 md:gap-5 w-full sm:w-auto animate-logo-fade"
+              style="animation-delay: 1.7s"
+            >
+              <a
+                href="contact.html"
+                class="w-full sm:w-auto inline-flex items-center justify-center bg-crimson hover:bg-crimson/90 text-[13px] md:text-[14px] font-sans font-medium text-white px-8 py-4 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.05] sm:origin-left"
+              >
+                <span class="lang-en">Schedule Strategy Consultation</span>
+                <span class="lang-jp hidden" lang="ja">戦略コンサルティング相談を予約する</span>
+              </a>
+              <a
+                href="experience.html"
+                class="w-full sm:w-auto inline-flex items-center justify-center border border-[#0F172A]/20 hover:border-crimson text-[13px] md:text-[14px] font-sans font-medium text-[#0F172A] hover:text-crimson px-8 py-4 transition-all duration-300 bg-white hover:-translate-y-0.5 hover:scale-[1.05] sm:origin-left"
+              >
+                <span class="lang-en">View Experience</span>
+                <span class="lang-jp hidden" lang="ja">実績を見る</span>
+              </a>
             </div>
-
-            <!-- Clients Partnered With -->
-            <div class="flex flex-col items-center justify-center px-2">
-              <span class="font-sans font-semibold text-2xl sm:text-3xl md:text-[35px] text-[#0F172A] tracking-tight" id="stat-clients">20+</span>
-              <span class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]">
-                <span class="lang-en">Clients Partnered With</span>
-                <span class="lang-jp hidden" lang="ja">主要取引パートナー実績</span>
-              </span>
-            </div>
-
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Logo Marquee Section -->
-    <section class="marquee-pause py-8 md:py-10 border-y border-[#0F172A]/10 bg-paper overflow-hidden">
-      <!-- Section Title -->
-      <p class="text-center text-[13px] tracking-[0.18em] uppercase text-ink/70 mb-6 -mt-2 font-semibold">
-        <span class="lang-en">Selected clients & partners</span>
-        <span class="lang-jp hidden" lang="ja">主要クライアント・パートナー</span>
-      </p>
+        <!-- Meter Section -->
+        <div
+          id="hero-meter-section"
+          class="relative z-20 w-full border-y border-[#0F172A]/10 bg-white/30 backdrop-blur-xs py-4 md:py-5 mt-auto animate-logo-fade"
+          style="animation-delay: 2.1s"
+        >
+          <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <!-- Projects -->
+              <div class="flex flex-col items-center justify-center px-2">
+                <span
+                  class="font-sans font-semibold text-2xl sm:text-3xl md:text-[35px] text-[#0F172A] tracking-tight"
+                  id="stat-carbon"
+                  >100+</span
+                >
+                <span
+                  class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]"
+                >
+                  <span class="lang-en">Projects Supported</span>
+                  <span class="lang-jp hidden" lang="ja">プロジェクトを支援</span>
+                </span>
+              </div>
 
-      <div class="flex flex-col gap-6 md:gap-7 relative">
-        <!-- Row 1 Marquee -->
+              <!-- Years of Experience -->
+              <div class="flex flex-col items-center justify-center px-2">
+                <span
+                  class="font-sans font-semibold text-2xl sm:text-3xl md:text-[35px] text-[#0F172A] tracking-tight"
+                  id="stat-experience"
+                  >35+</span
+                >
+                <span
+                  class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]"
+                >
+                  <span class="lang-en">Years in Japan Technology</span>
+                  <span class="lang-jp hidden" lang="ja">日本での35年間の技術経験</span>
+                </span>
+              </div>
+
+              <!-- Global Clients -->
+              <div class="flex flex-col items-center justify-center px-2">
+                <span
+                  class="font-sans font-semibold text-2xl sm:text-3xl md:text-[35px] text-[#0F172A] tracking-tight"
+                  id="stat-clients"
+                  >20+</span
+                >
+                <span
+                  class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]"
+                >
+                  <span class="lang-en">Global Clients</span>
+                  <span class="lang-jp hidden" lang="ja">世界中の顧客</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logo Marquee Section -->
+      <section
+        class="marquee-pause py-8 md:py-10 border-y border-[#0F172A]/10 bg-paper overflow-hidden"
+      >
+        <!-- Section Title -->
+        <p
+          class="text-center text-[13px] tracking-[0.18em] uppercase text-ink/70 mb-6 -mt-2 font-semibold"
+        >
+          <span class="lang-en">Selected clients & partners</span>
+          <span class="lang-jp hidden" lang="ja">主要クライアント・パートナー</span>
+        </p>
+
         <div class="relative">
           <div class="flex gap-16 whitespace-nowrap animate-marquee w-max items-center">
-            <!-- First half duplicates for infinite cycle -->
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Ambit Energy">
-              <img src="assets/Ambit-energy.svg" alt="Ambit Energy" class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <!-- Complete set of 10 clients repeated for seamless infinite scroll -->
+
+            <!-- Set 1 -->
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="IBM"
+            >
+              <img
+                src="assets/IBM-logo.svg"
+                alt="IBM"
+                class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Computer Associates">
-              <img src="assets/Computer_Associates_logo.svg" alt="Computer Associates" class="h-7 md:h-8 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Oracle"
+            >
+              <img
+                src="assets/Oracle_logo.svg"
+                alt="Oracle"
+                class="h-[16px] md:h-[18px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="CTC">
-              <img src="assets/CTC-logo.svg" alt="CTC" class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Hitachi"
+            >
+              <img
+                src="assets/Hitachi_2025_logo.svg"
+                alt="Hitachi"
+                class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Evans & Sutherland">
-              <img src="assets/Evans_&_Sutherland_logo.svg" alt="Evans & Sutherland" class="h-7 md:h-8 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Fujitsu"
+            >
+              <img
+                src="assets/Fujitsu-Logo.svg"
+                alt="Fujitsu"
+                class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Fujitsu">
-              <img src="assets/Fujitsu-Logo.svg" alt="Fujitsu" class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="NTT DATA"
+            >
+              <img
+                src="assets/NTT_Data_2025.svg"
+                alt="NTT DATA"
+                class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Gakken">
-              <img src="assets/Gakken_company_logo.svg" alt="Gakken" class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Panasonic"
+            >
+              <img
+                src="assets/Panasonic_logo.svg"
+                alt="Panasonic"
+                class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Hitachi">
-              <img src="assets/Hitachi_2025_logo.svg" alt="Hitachi" class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Nippon Steel"
+            >
+              <img
+                src="assets/Nippon_Steel_-_Logo.svg"
+                alt="Nippon Steel"
+                class="h-[26px] md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Hitachi Zosen">
-              <img src="assets/Hitachi_Zosen_logo.svg" alt="Hitachi Zosen" class="h-[22px] md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Toshiba"
+            >
+              <img
+                src="assets/Toshiba_logo.svg"
+                alt="Toshiba"
+                class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="HP">
-              <img src="assets/HP_logo_2012.svg" alt="HP" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="CTC"
+            >
+              <img
+                src="assets/CTC-logo.svg"
+                alt="CTC"
+                class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="IBM">
-              <img src="assets/IBM-logo.svg" alt="IBM" class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="University of Tokyo"
+            >
+              <img
+                src="assets/University_of_Tokyo_logo.svg"
+                alt="University of Tokyo"
+                class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <!-- Duplication -->
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Ambit Energy">
-              <img src="assets/Ambit-energy.svg" alt="Ambit Energy" class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+
+            <!-- Set 2 -->
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="IBM"
+            >
+              <img
+                src="assets/IBM-logo.svg"
+                alt="IBM"
+                class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Computer Associates">
-              <img src="assets/Computer_Associates_logo.svg" alt="Computer Associates" class="h-7 md:h-8 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Oracle"
+            >
+              <img
+                src="assets/Oracle_logo.svg"
+                alt="Oracle"
+                class="h-[16px] md:h-[18px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="CTC">
-              <img src="assets/CTC-logo.svg" alt="CTC" class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Hitachi"
+            >
+              <img
+                src="assets/Hitachi_2025_logo.svg"
+                alt="Hitachi"
+                class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Evans & Sutherland">
-              <img src="assets/Evans_&_Sutherland_logo.svg" alt="Evans & Sutherland" class="h-7 md:h-8 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Fujitsu"
+            >
+              <img
+                src="assets/Fujitsu-Logo.svg"
+                alt="Fujitsu"
+                class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Fujitsu">
-              <img src="assets/Fujitsu-Logo.svg" alt="Fujitsu" class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="NTT DATA"
+            >
+              <img
+                src="assets/NTT_Data_2025.svg"
+                alt="NTT DATA"
+                class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Gakken">
-              <img src="assets/Gakken_company_logo.svg" alt="Gakken" class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Panasonic"
+            >
+              <img
+                src="assets/Panasonic_logo.svg"
+                alt="Panasonic"
+                class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Hitachi">
-              <img src="assets/Hitachi_2025_logo.svg" alt="Hitachi" class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Nippon Steel"
+            >
+              <img
+                src="assets/Nippon_Steel_-_Logo.svg"
+                alt="Nippon Steel"
+                class="h-[26px] md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Hitachi Zosen">
-              <img src="assets/Hitachi_Zosen_logo.svg" alt="Hitachi Zosen" class="h-[22px] md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Toshiba"
+            >
+              <img
+                src="assets/Toshiba_logo.svg"
+                alt="Toshiba"
+                class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="HP">
-              <img src="assets/HP_logo_2012.svg" alt="HP" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="CTC"
+            >
+              <img
+                src="assets/CTC-logo.svg"
+                alt="CTC"
+                class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="IBM">
-              <img src="assets/IBM-logo.svg" alt="IBM" class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="University of Tokyo"
+            >
+              <img
+                src="assets/University_of_Tokyo_logo.svg"
+                alt="University of Tokyo"
+                class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+
+            <!-- Set 3 -->
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="IBM"
+            >
+              <img
+                src="assets/IBM-logo.svg"
+                alt="IBM"
+                class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Oracle"
+            >
+              <img
+                src="assets/Oracle_logo.svg"
+                alt="Oracle"
+                class="h-[16px] md:h-[18px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Hitachi"
+            >
+              <img
+                src="assets/Hitachi_2025_logo.svg"
+                alt="Hitachi"
+                class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Fujitsu"
+            >
+              <img
+                src="assets/Fujitsu-Logo.svg"
+                alt="Fujitsu"
+                class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="NTT DATA"
+            >
+              <img
+                src="assets/NTT_Data_2025.svg"
+                alt="NTT DATA"
+                class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Panasonic"
+            >
+              <img
+                src="assets/Panasonic_logo.svg"
+                alt="Panasonic"
+                class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Nippon Steel"
+            >
+              <img
+                src="assets/Nippon_Steel_-_Logo.svg"
+                alt="Nippon Steel"
+                class="h-[26px] md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="Toshiba"
+            >
+              <img
+                src="assets/Toshiba_logo.svg"
+                alt="Toshiba"
+                class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="CTC"
+            >
+              <img
+                src="assets/CTC-logo.svg"
+                alt="CTC"
+                class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
+            </div>
+            <div
+              class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title="University of Tokyo"
+            >
+              <img
+                src="assets/University_of_Tokyo_logo.svg"
+                alt="University of Tokyo"
+                class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
+              />
+              <span
+                class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
+                aria-hidden="true"
+              ></span>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Row 2 Marquee (Reverse Direction) -->
-        <div class="relative">
-          <div class="flex gap-16 whitespace-nowrap animate-marquee-reverse w-max items-center">
-            <!-- First half -->
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Keio University">
-              <img src="assets/Keio_University_logo.svg" alt="Keio University" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Mannatech">
-              <img src="assets/Mannatech-logo.png" alt="Mannatech" class="h-[28px] md:h-8 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Nippon Steel">
-              <img src="assets/Nippon_Steel_-_Logo.svg" alt="Nippon Steel" class="h-[26px] md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Novell">
-              <img src="assets/Novell_teeth_logo_print.svg" alt="Novell" class="h-[22px] md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="NTT DATA">
-              <img src="assets/NTT_Data_2025.svg" alt="NTT DATA" class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Oracle">
-              <img src="assets/Oracle_logo.svg" alt="Oracle" class="h-[16px] md:h-[18px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Panasonic">
-              <img src="assets/Panasonic_logo.svg" alt="Panasonic" class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Sun Microsystems">
-              <img src="assets/Sun-Logo.svg" alt="Sun Microsystems" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Toshiba">
-              <img src="assets/Toshiba_logo.svg" alt="Toshiba" class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="University of Tokyo">
-              <img src="assets/University_of_Tokyo_logo.svg" alt="University of Tokyo" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <!-- Duplication -->
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Keio University">
-              <img src="assets/Keio_University_logo.svg" alt="Keio University" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Mannatech">
-              <img src="assets/Mannatech-logo.png" alt="Mannatech" class="h-[28px] md:h-8 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Nippon Steel">
-              <img src="assets/Nippon_Steel_-_Logo.svg" alt="Nippon Steel" class="h-[26px] md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Novell">
-              <img src="assets/Novell_teeth_logo_print.svg" alt="Novell" class="h-[22px] md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="NTT DATA">
-              <img src="assets/NTT_Data_2025.svg" alt="NTT DATA" class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Oracle">
-              <img src="assets/Oracle_logo.svg" alt="Oracle" class="h-[16px] md:h-[18px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Panasonic">
-              <img src="assets/Panasonic_logo.svg" alt="Panasonic" class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Sun Microsystems">
-              <img src="assets/Sun-Logo.svg" alt="Sun Microsystems" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="Toshiba">
-              <img src="assets/Toshiba_logo.svg" alt="Toshiba" class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
-            </div>
-            <div class="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0" title="University of Tokyo">
-              <img src="assets/University_of_Tokyo_logo.svg" alt="University of Tokyo" class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none" />
-              <span class="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden="true"></span>
+      <!-- Navigation Menu Cards Section -->
+      <section class="bg-[#F8FAFC] py-24">
+        <div class="mx-auto max-w-7xl px-6">
+          <div
+            id="menu-cards-grid"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]"
+          >
+            <!-- Card 01: Bio -->
+            <a
+              href="bio.html"
+              class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
+            >
+              <div
+                class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform translate-x-6 translate-y-6 scale-75 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-110 group-hover:opacity-35 transition-all duration-500 ease-out z-0"
+              >
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                  <defs>
+                    <radialGradient id="sunGlowCard-01" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
+                      <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
+                      <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
+                      <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-01)"></circle>
+                </svg>
+              </div>
+              <div class="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
+                  >
+                    <div class="flex items-baseline gap-3">
+                      <h3 class="font-serif text-3xl text-[#0F172A]">Bio</h3>
+                      <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
+                        <span class="lang-en">who we are</span>
+                        <span class="lang-jp hidden" lang="ja">私たちについて</span>
+                      </span>
+                    </div>
+                    <span
+                      class="font-jp text-[#0F172A]/50 text-xs tracking-widest"
+                      style="font-family: var(--font-jp)"
+                      >経歴</span
+                    >
+                  </div>
+                  <ul class="space-y-3.5 text-sm text-[#0F172A]/80 font-sans leading-relaxed">
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Established 1991 with long-term Japan-market experience.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >1991年設立、長年にわたる日本市場での豊富な実績と経験。</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Principal background in technology, research, and cross-border
+                          negotiations.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >技術、研究開発、およびクロスボーダー交渉における代表者の深いバックグラウンド。</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Best place for trust, origin story, and relationship depth.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >信頼、創業ストーリー、そして関係性の深さを築く最適なパートナー。</span
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 02: Services -->
+            <a
+              href="services.html"
+              class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
+            >
+              <div
+                class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform translate-x-6 translate-y-6 scale-75 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-110 group-hover:opacity-35 transition-all duration-500 ease-out z-0"
+              >
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                  <defs>
+                    <radialGradient id="sunGlowCard-02" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
+                      <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
+                      <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
+                      <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-02)"></circle>
+                </svg>
+              </div>
+              <div class="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
+                  >
+                    <div class="flex items-baseline gap-3">
+                      <h3 class="font-serif text-3xl text-[#0F172A]">Services</h3>
+                      <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
+                        <span class="lang-en">what we do</span>
+                        <span class="lang-jp hidden" lang="ja">提供サービス</span>
+                      </span>
+                    </div>
+                    <span
+                      class="font-jp text-[#0F172A]/50 text-xs tracking-widest"
+                      style="font-family: var(--font-jp)"
+                      >業務内容</span
+                    >
+                  </div>
+                  <ul class="space-y-3.5 text-sm text-[#0F172A]/80 font-sans leading-relaxed">
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en">Japan market entry and validation.</span>
+                        <span class="lang-jp hidden" lang="ja"
+                          >日本市場への参入および妥当性検証。</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Business development and strategic partnerships.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >事業開発および戦略的パートナーシップ。</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Technology commercialization and academic-industry support.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >技術の商業化および産学連携支援。</span
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 03: Experience -->
+            <a
+              href="experience.html"
+              class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
+            >
+              <div
+                class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform translate-x-6 translate-y-6 scale-75 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-110 group-hover:opacity-35 transition-all duration-500 ease-out z-0"
+              >
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                  <defs>
+                    <radialGradient id="sunGlowCard-03" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
+                      <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
+                      <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
+                      <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-03)"></circle>
+                </svg>
+              </div>
+              <div class="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
+                  >
+                    <div class="flex items-baseline gap-3">
+                      <h3 class="font-serif text-3xl text-[#0F172A]">Experience</h3>
+                      <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
+                        <span class="lang-en">how you can benefit</span>
+                        <span class="lang-jp hidden" lang="ja">実績と価値</span>
+                      </span>
+                    </div>
+                    <span
+                      class="font-jp text-[#0F172A]/50 text-xs tracking-widest"
+                      style="font-family: var(--font-jp)"
+                      >実績</span
+                    >
+                  </div>
+                  <ul class="space-y-3.5 text-sm text-[#0F172A]/80 font-sans leading-relaxed">
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Market-entry obstacles solved over multiple decades.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >数十年にわたり市場参入における障害を克服・解決。</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Support for component supply and strategic relationships.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >部品供給および戦略的関係構築へのサポート。</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Japan as a platform for wider APAC opportunities.</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >より広範なアジア太平洋（APAC）展開のためのプラットフォームとしての日本。</span
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 04: Resources -->
+            <a
+              href="resources.html"
+              class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
+            >
+              <div
+                class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform translate-x-6 translate-y-6 scale-75 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-110 group-hover:opacity-35 transition-all duration-500 ease-out z-0"
+              >
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                  <defs>
+                    <radialGradient id="sunGlowCard-04" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
+                      <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
+                      <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
+                      <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-04)"></circle>
+                </svg>
+              </div>
+              <div class="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
+                  >
+                    <div class="flex items-baseline gap-3">
+                      <h3 class="font-serif text-3xl text-[#0F172A]">Resources</h3>
+                      <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
+                        <span class="lang-en">useful links</span>
+                        <span class="lang-jp hidden" lang="ja">関連資料</span>
+                      </span>
+                    </div>
+                    <span
+                      class="font-jp text-[#0F172A]/50 text-xs tracking-widest"
+                      style="font-family: var(--font-jp)"
+                      >資料</span
+                    >
+                  </div>
+                  <ul class="space-y-3.5 text-sm text-[#0F172A]/80 font-sans leading-relaxed">
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en">Doing Business in Japan - White papers</span>
+                        <span class="lang-jp hidden" lang="ja"
+                          >日本でのビジネス展開 - ホワイトペーパー</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en">Robotics and Industry briefings - Slides</span>
+                        <span class="lang-jp hidden" lang="ja"
+                          >ロボティクスおよび業界ブリーフィング - スライド資料</span
+                        >
+                      </div>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                      <div>
+                        <span class="lang-en"
+                          >Culture, technology, and market insight - Videos</span
+                        >
+                        <span class="lang-jp hidden" lang="ja"
+                          >文化、技術、および市場インサイト - ビデオ・動画</span
+                        >
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+
+            <!-- Card 05: Contact -->
+            <a
+              href="contact.html"
+              class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
+            >
+              <div
+                class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform translate-x-6 translate-y-6 scale-75 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-110 group-hover:opacity-35 transition-all duration-500 ease-out z-0"
+              >
+                <svg viewBox="0 0 100 100" class="w-full h-full">
+                  <defs>
+                    <radialGradient id="sunGlowCard-05" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
+                      <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
+                      <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
+                      <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
+                    </radialGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-05)"></circle>
+                </svg>
+              </div>
+              <div class="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
+                  >
+                    <div class="flex items-baseline gap-3">
+                      <h3 class="font-serif text-3xl text-[#0F172A]">Contact</h3>
+                      <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
+                        <span class="lang-en">get in touch</span>
+                        <span class="lang-jp hidden" lang="ja">ご連絡</span>
+                      </span>
+                    </div>
+                    <span
+                      class="font-jp text-[#0F172A]/50 text-xs tracking-widest"
+                      style="font-family: var(--font-jp)"
+                      >お問い合わせ</span
+                    >
+                  </div>
+                  <div class="py-8 flex justify-center">
+                    <div
+                      class="inline-flex items-center justify-center bg-crimson text-white px-8 py-4 text-[12px] md:text-[13px] font-sans font-medium uppercase tracking-[0.2em] shadow-md transition-all duration-300 rounded-[2px] group-hover:bg-crimson/90 group-hover:shadow-lg group-hover:-translate-y-0.5 group-hover:scale-[1.05] border-none"
+                    >
+                      <span class="lang-en">Start a Conversation</span>
+                      <span class="lang-jp hidden" lang="ja">対話を始める</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Crest Card -->
+            <div
+              id="crest-card"
+              class="group relative hidden border border-[#0F172A]/10 bg-paper p-8 transition-all duration-300 md:flex flex-col items-center justify-center hover:bg-white hover:border-crimson/30 shadow-sm hover:shadow-md overflow-hidden rounded-[2px]"
+            >
+              <p class="mb-4 font-sans text-xs text-black opacity-0 max-h-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-12 text-center select-none pointer-events-none">
+                This hanko (stamp) says: Kabushiki gaisha Kamo.
+              </p>
+              <img
+                src="assets/kamo-inc-inkan-trans.svg"
+                alt=""
+                class="w-32 h-32 opacity-55 transition-all duration-500 group-hover:scale-105 group-hover:opacity-85"
+                aria-hidden="true"
+              />
+              <p class="mt-4 font-sans text-xs text-black opacity-0 max-h-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-12 text-center select-none pointer-events-none">
+                The meaning in English is: Kamo, Inc.
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Navigation Menu Cards Section -->
-    <section class="bg-[#F8FAFC] py-24">
-      <div class="mx-auto max-w-7xl px-6">
-        <div id="menu-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]">
-          
-          <!-- Card 01: Bio -->
-          <a href="bio.html" class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]">
-            <div class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-50 transition-all duration-500 ease-out z-0">
-              <svg viewBox="0 0 100 100" class="w-full h-full">
-                <defs>
-                  <radialGradient id="sunGlowCard-01" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="oklch(0.508 0.214 22)" stop-opacity="1"></stop>
-                    <stop offset="70%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0.8"></stop>
-                    <stop offset="100%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0"></stop>
-                  </radialGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-01)"></circle>
-              </svg>
-            </div>
-            <div class="relative z-10 flex items-start justify-between gap-4">
-              <div>
-                <p class="text-[11px] tracking-[0.3em] uppercase text-[#0F172A]/40 mb-3 font-mono">01</p>
-                <h3 class="font-serif text-3xl mb-1 text-[#0F172A]">Bio</h3>
-                <p class="font-jp text-[#0F172A]/60 text-sm mb-4" style="font-family: var(--font-jp);">経歴</p>
-                <p class="text-sm text-[#0F172A]/70 max-w-xs">
-                  <span class="lang-en">who we are</span>
-                  <span class="lang-jp hidden" lang="ja">私たちについて</span>
-                </p>
-              </div>
-            </div>
+    <!-- Site Footer -->
+    <footer class="border-t border-ink/10 pb-6 bg-paper">
+      <div
+        class="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+      >
+        <div class="text-left font-sans text-sm text-ink/75">
+          <span class="footer-line-1"
+            ><span class="text-crimson">©</span> <span id="footer-year">2026</span> kamo, inc.
+            ・Established 1991</span
+          >
+          <span class="footer-line-2">・Sakaki, Japan - All Rights Reserved</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+            class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-linkedin"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect width="4" height="12" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
           </a>
-
-          <!-- Card 02: Services -->
-          <a href="services.html" class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]">
-            <div class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-50 transition-all duration-500 ease-out z-0">
-              <svg viewBox="0 0 100 100" class="w-full h-full">
-                <defs>
-                  <radialGradient id="sunGlowCard-02" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="oklch(0.508 0.214 22)" stop-opacity="1"></stop>
-                    <stop offset="70%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0.8"></stop>
-                    <stop offset="100%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0"></stop>
-                  </radialGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-02)"></circle>
-              </svg>
-            </div>
-            <div class="relative z-10 flex items-start justify-between gap-4">
-              <div>
-                <p class="text-[11px] tracking-[0.3em] uppercase text-[#0F172A]/40 mb-3 font-mono">02</p>
-                <h3 class="font-serif text-3xl mb-1 text-[#0F172A]">Services</h3>
-                <p class="font-jp text-[#0F172A]/60 text-sm mb-4" style="font-family: var(--font-jp);">業務内容</p>
-                <p class="text-sm text-[#0F172A]/70 max-w-xs">
-                  <span class="lang-en">what we do</span>
-                  <span class="lang-jp hidden" lang="ja">提供サービス</span>
-                </p>
-              </div>
-            </div>
+          <a
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="X (formerly Twitter)"
+            class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1"
+          >
+            <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+              ></path>
+            </svg>
           </a>
-
-          <!-- Card 03: Experience -->
-          <a href="experience.html" class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]">
-            <div class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-50 transition-all duration-500 ease-out z-0">
-              <svg viewBox="0 0 100 100" class="w-full h-full">
-                <defs>
-                  <radialGradient id="sunGlowCard-03" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="oklch(0.508 0.214 22)" stop-opacity="1"></stop>
-                    <stop offset="70%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0.8"></stop>
-                    <stop offset="100%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0"></stop>
-                  </radialGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-03)"></circle>
-              </svg>
-            </div>
-            <div class="relative z-10 flex items-start justify-between gap-4">
-              <div>
-                <p class="text-[11px] tracking-[0.3em] uppercase text-[#0F172A]/40 mb-3 font-mono">03</p>
-                <h3 class="font-serif text-3xl mb-1 text-[#0F172A]">Experience</h3>
-                <p class="font-jp text-[#0F172A]/60 text-sm mb-4" style="font-family: var(--font-jp);">実績</p>
-                <p class="text-sm text-[#0F172A]/70 max-w-xs">
-                  <span class="lang-en">how you can benefit</span>
-                  <span class="lang-jp hidden" lang="ja">実績と価値</span>
-                </p>
-              </div>
-            </div>
+          <a
+            href="#"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+            class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-facebook"
+            >
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
           </a>
-
-          <!-- Card 04: Resources -->
-          <a href="resources.html" class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]">
-            <div class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-50 transition-all duration-500 ease-out z-0">
-              <svg viewBox="0 0 100 100" class="w-full h-full">
-                <defs>
-                  <radialGradient id="sunGlowCard-04" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="oklch(0.508 0.214 22)" stop-opacity="1"></stop>
-                    <stop offset="70%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0.8"></stop>
-                    <stop offset="100%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0"></stop>
-                  </radialGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-04)"></circle>
-              </svg>
-            </div>
-            <div class="relative z-10 flex items-start justify-between gap-4">
-              <div>
-                <p class="text-[11px] tracking-[0.3em] uppercase text-[#0F172A]/40 mb-3 font-mono">04</p>
-                <h3 class="font-serif text-3xl mb-1 text-[#0F172A]">Resources</h3>
-                <p class="font-jp text-[#0F172A]/60 text-sm mb-4" style="font-family: var(--font-jp);">資料</p>
-                <p class="text-sm text-[#0F172A]/70 max-w-xs">
-                  <span class="lang-en">useful links</span>
-                  <span class="lang-jp hidden" lang="ja">関連資料</span>
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <!-- Card 05: Contact -->
-          <a href="contact.html" class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]">
-            <div class="absolute -right-12 -bottom-12 w-36 h-36 pointer-events-none transform scale-75 opacity-0 group-hover:scale-110 group-hover:opacity-50 transition-all duration-500 ease-out z-0">
-              <svg viewBox="0 0 100 100" class="w-full h-full">
-                <defs>
-                  <radialGradient id="sunGlowCard-05" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stop-color="oklch(0.508 0.214 22)" stop-opacity="1"></stop>
-                    <stop offset="70%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0.8"></stop>
-                    <stop offset="100%" stop-color="oklch(0.508 0.214 22)" stop-opacity="0"></stop>
-                  </radialGradient>
-                </defs>
-                <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-05)"></circle>
-              </svg>
-            </div>
-            <div class="relative z-10 flex items-start justify-between gap-4">
-              <div>
-                <p class="text-[11px] tracking-[0.3em] uppercase text-[#0F172A]/40 mb-3 font-mono">05</p>
-                <h3 class="font-serif text-3xl mb-1 text-[#0F172A]">Contact</h3>
-                <p class="font-jp text-[#0F172A]/60 text-sm mb-4" style="font-family: var(--font-jp);">お問い合わせ</p>
-                <p class="text-sm text-[#0F172A]/70 max-w-xs">
-                  <span class="lang-en">get in touch</span>
-                  <span class="lang-jp hidden" lang="ja">ご連絡</span>
-                </p>
-              </div>
-            </div>
-          </a>
-
-          <!-- Crest Card -->
-          <div id="crest-card" class="group relative hidden border border-[#0F172A]/10 bg-paper p-8 transition-all duration-300 md:flex items-center justify-center hover:bg-white hover:border-crimson/30 shadow-sm hover:shadow-md overflow-hidden rounded-[2px]">
-            <img src="assets/kamo-inc-inkan-trans.svg" alt="" class="w-32 h-32 opacity-25 transition-all duration-500 group-hover:scale-105 group-hover:opacity-35" aria-hidden="true" />
-          </div>
-
         </div>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <!-- Site Footer -->
-  <footer class="border-t border-ink/10 pb-6 bg-paper">
-    <div class="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-      <div class="text-left font-sans text-sm text-ink/75">
-        <span class="footer-line-1"><span class="text-crimson">©</span> <span id="footer-year">2026</span> kamo, inc. ・Established 1991</span> <span class="footer-line-2">・Sakaki, Japan - All Rights Reserved</span>
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-        <a href="#" target="_blank" rel="noreferrer" aria-label="X (formerly Twitter)" class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1">
-          <svg viewBox="0 0 24 24" class="w-4 h-4" fill="currentColor">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-          </svg>
-        </a>
-        <a href="#" target="_blank" rel="noreferrer" aria-label="Facebook" class="text-ink/60 hover:text-crimson transition-all duration-300 hover:-translate-y-1">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Main JavaScript File -->
-  <script src="js/main.js"></script>
-</body>
+    <!-- Main JavaScript File -->
+    <script src="js/main.js"></script>
+  </body>
 </html>

@@ -78,7 +78,7 @@ function Group({ heading, items }: { heading: string; items: Item[] }) {
 function ResourcesPage() {
   return (
     <main>
-      <SectionOpener jp="資料" en="Useful links" kicker="04 — Resources" />
+      <SectionOpener jp="資料" en="Useful links" kicker="Resources" />
       <div className="mx-auto max-w-7xl px-6 space-y-20 pb-24 md:pb-32">
         <Group heading="White papers" items={PAPERS} />
         <Group heading="Slides" items={DECKS} />

@@ -50,7 +50,7 @@ function VideoCard({ title, caption }: { title: string; caption: string }) {
 function BioPage() {
   return (
     <main>
-      <SectionOpener jp="経歴" en="Who we are" kicker="01 — Bio">
+      <SectionOpener jp="経歴" en="Who we are" kicker="Bio">
         kamo, inc. is a Japanese corporation established in 1991 and capitalized at ¥10 million. We
         have successfully delivered results for dozens of corporate clients in the US and Japan.
       </SectionOpener>

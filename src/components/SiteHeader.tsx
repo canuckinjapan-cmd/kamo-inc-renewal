@@ -73,7 +73,7 @@ export function SiteHeader() {
               <Link
                 key={l.to}
                 to={l.to}
-                className={`text-ink/70 hover:text-crimson hover:font-extrabold transition-all duration-200 ${
+                className={`text-ink/70 hover:text-crimson hover:font-extrabold transition-all duration-200 inline-block transform hover:scale-110 origin-center ${
                   lang === "jp" ? "font-jp" : "font-sans"
                 }`}
                 style={lang === "jp" ? { fontFamily: "var(--font-jp)" } : undefined}

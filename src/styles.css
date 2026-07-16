@@ -214,6 +214,12 @@
 
 /* Tablet Portrait Spacing and Alignment adjustments */
 @media (max-width: 1024px) and (orientation: portrait) {
+  #menu-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+  #crest-card {
+    display: none !important;
+  }
   footer > div {
     flex-direction: row !important;
     align-items: center !important;
@@ -224,6 +230,16 @@
   footer .text-left {
     font-size: 0.75rem !important; /* text-xs (12px) */
     white-space: nowrap !important;
+  }
+}
+
+/* Mobile Landscape Spacing and Alignment adjustments */
+@media (max-width: 950px) and (orientation: landscape) {
+  #menu-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+  #crest-card {
+    display: none !important;
   }
 }
 
@@ -239,6 +255,9 @@
     font-size: 1.4rem !important;
     line-height: 1.15 !important;
     margin-bottom: 0.125rem !important;
+  }
+  .menu-card-subtitle {
+    display: none !important;
   }
   #menu-cards-grid p {
     line-height: 1.25 !important;

@@ -47,25 +47,15 @@ export const Route = createFileRoute("/")({
 });
 
 const CLIENTS = [
-  "Ambit Energy",
-  "Computer Associates",
-  "CTC",
-  "Evans & Sutherland",
-  "Fujitsu",
-  "Gakken",
-  "Hitachi",
-  "Hitachi Zosen",
-  "HP",
   "IBM",
-  "Keio University",
-  "Mannatech",
-  "Nippon Steel",
-  "Novell",
-  "NTT DATA",
   "Oracle",
+  "Hitachi",
+  "Fujitsu",
+  "NTT DATA",
   "Panasonic",
-  "Sun Microsystems",
+  "Nippon Steel",
   "Toshiba",
+  "CTC",
   "University of Tokyo",
 ];
 
@@ -126,11 +116,8 @@ function RisingSun() {
 function ClientMarquee() {
   const t = useT();
   const { lang } = useLang();
-  const firstHalf = CLIENTS.slice(0, 10);
-  const secondHalf = CLIENTS.slice(10);
 
-  const row1 = [...firstHalf, ...firstHalf];
-  const row2 = [...secondHalf, ...secondHalf];
+  const row = [...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS];
 
   return (
     <section className="marquee-pause py-8 md:py-10 border-y border-[#0F172A]/10 bg-paper overflow-hidden">
@@ -142,40 +129,18 @@ function ClientMarquee() {
       >
         {t("section.clients")}
       </p>
-      <div className="flex flex-col gap-6 md:gap-7 relative">
-        <div className="relative">
-          <div className="flex gap-16 whitespace-nowrap animate-marquee w-max items-center">
-            {row1.map((c, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
-                title={c}
-              >
-                <ClientLogo name={c} />
-                <span
-                  className="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
-                  aria-hidden
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="relative">
-          <div className="flex gap-16 whitespace-nowrap animate-marquee-reverse w-max items-center">
-            {row2.map((c, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
-                title={c}
-              >
-                <ClientLogo name={c} />
-                <span
-                  className="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0"
-                  aria-hidden
-                />
-              </div>
-            ))}
-          </div>
+      <div className="relative">
+        <div className="flex gap-16 whitespace-nowrap animate-marquee w-max items-center">
+          {row.map((c, i) => (
+            <div
+              key={i}
+              className="flex items-center gap-16 text-[#0F172A]/65 hover:text-crimson transition-colors duration-300 shrink-0"
+              title={c}
+            >
+              <ClientLogo name={c} />
+              <span className="block w-1.5 h-1.5 rounded-full bg-crimson/50 shrink-0" aria-hidden />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -186,16 +151,21 @@ function MenuCard({
   to,
   en,
   jp,
-  blurb,
+  subtitleEn,
   num,
+  items,
+  isContact,
 }: {
   to: string;
   en: string;
   jp: string;
-  blurb: string;
+  subtitleEn: string;
   num: string;
+  items?: { en: string; jp: string }[];
+  isContact?: boolean;
 }) {
   const gradientId = `sunGlowCard-${num}`;
+  const { lang } = useLang();
   return (
     <Link
       to={to}
@@ -213,19 +183,41 @@ function MenuCard({
           <circle cx="50" cy="50" r="50" fill={`url(#${gradientId})`} />
         </svg>
       </div>
-      <div className="relative z-10 flex items-start justify-between gap-4">
+      <div className="relative z-10 flex flex-col justify-between h-full">
         <div>
-          <p className="text-[11px] tracking-[0.3em] uppercase text-[#0F172A]/40 mb-3 font-mono">
-            {num}
-          </p>
-          <h3 className="font-serif text-3xl mb-1 text-[#0F172A]">{en}</h3>
-          <p
-            className="font-jp text-[#0F172A]/60 text-sm mb-4"
-            style={{ fontFamily: "var(--font-jp)" }}
-          >
-            {jp}
-          </p>
-          <p className="text-sm text-[#0F172A]/70 max-w-xs">{blurb}</p>
+          <div className="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3">
+            <div className="flex items-baseline gap-3">
+              <h3 className="font-serif text-3xl text-[#0F172A]">{en}</h3>
+              <span className="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
+                {subtitleEn}
+              </span>
+            </div>
+            <span
+              className="font-jp text-[#0F172A]/50 text-xs tracking-widest"
+              style={{ fontFamily: "var(--font-jp)" }}
+            >
+              {jp}
+            </span>
+          </div>
+
+          {items && (
+            <ul className="space-y-3.5 text-sm text-[#0F172A]/80 font-sans leading-relaxed text-left">
+              {items.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-2.5">
+                  <span className="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
+                  <div>{lang === "jp" ? item.jp : item.en}</div>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {isContact && (
+            <div className="py-8 flex justify-center">
+              <div className="inline-flex items-center justify-center bg-crimson text-white px-8 py-4 text-[12px] md:text-[13px] font-sans font-medium uppercase tracking-[0.2em] shadow-md transition-all duration-300 rounded-[2px] group-hover:bg-crimson/90 group-hover:shadow-lg group-hover:-translate-y-0.5 group-hover:scale-[1.05] border-none">
+                <span>{lang === "jp" ? "対話を始める" : "Start a Conversation"}</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </Link>
@@ -235,6 +227,60 @@ function MenuCard({
 function LandingPage() {
   const t = useT();
   const { lang } = useLang();
+
+  const bioItems = [
+    {
+      en: "Established 1991 with long-term Japan-market experience.",
+      jp: "1991年設立、長年にわたる日本市場での豊富な実績と経験。",
+    },
+    {
+      en: "Principal background in technology, research, and cross-border negotiations.",
+      jp: "技術、研究開発、およびクロスボーダー交渉における代表者の深いバックグラウンド。",
+    },
+    {
+      en: "Best place for trust, origin story, and relationship depth.",
+      jp: "信頼、創業ストーリー、そして関係性の深さを築く最適なパートナー。",
+    },
+  ];
+
+  const servicesItems = [
+    { en: "Japan market entry and validation.", jp: "日本市場への参入および妥当性検証。" },
+    {
+      en: "Business development and strategic partnerships.",
+      jp: "事業開発および戦略的パートナーシップ。",
+    },
+    {
+      en: "Technology commercialization and academic-industry support.",
+      jp: "技術の商業化および産学連携支援。",
+    },
+  ];
+
+  const experienceItems = [
+    {
+      en: "Market-entry obstacles solved over multiple decades.",
+      jp: "数十年にわたり市場参入における障害を克服・解決。",
+    },
+    {
+      en: "Support for component supply and strategic relationships.",
+      jp: "部品供給および戦略的関係構築へのサポート。",
+    },
+    {
+      en: "Japan as a platform for wider APAC opportunities.",
+      jp: "より広範なアジア太平洋（APAC）展開のためのプラットフォームとしての日本。",
+    },
+  ];
+
+  const resourcesItems = [
+    { en: "Doing Business in Japan - White papers", jp: "日本でのビジネス展開 - ホワイトペーパー" },
+    {
+      en: "Robotics and Industry briefings - Slides",
+      jp: "ロボティクスおよび業界ブリーフィング - スライド資料",
+    },
+    {
+      en: "Culture, technology, and market insight - Videos",
+      jp: "文化、技術、および市場インサイト - ビデオ・動画",
+    },
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -355,43 +401,66 @@ function LandingPage() {
       {/* Menu / Bio card section background F8FAFC */}
       <section className="bg-[#F8FAFC] py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#0F172A]/10">
-            <MenuCard num="01" to="/bio" en="Bio" jp="経歴" blurb={t("menu.bio.tag")} />
+          <div
+            id="menu-cards-grid"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]"
+          >
+            <MenuCard
+              num="01"
+              to="/bio"
+              en="Bio"
+              jp="経歴"
+              subtitleEn="who we are"
+              items={bioItems}
+            />
             <MenuCard
               num="02"
               to="/services"
               en="Services"
               jp="業務内容"
-              blurb={t("menu.services.tag")}
+              subtitleEn="what we do"
+              items={servicesItems}
             />
             <MenuCard
               num="03"
               to="/experience"
               en="Experience"
               jp="実績"
-              blurb={t("menu.experience.tag")}
+              subtitleEn="how you can benefit"
+              items={experienceItems}
             />
             <MenuCard
               num="04"
               to="/resources"
               en="Resources"
               jp="資料"
-              blurb={t("menu.resources.tag")}
+              subtitleEn="useful links"
+              items={resourcesItems}
             />
             <MenuCard
               num="05"
               to="/contact"
               en="Contact"
               jp="お問い合わせ"
-              blurb={t("menu.contact.tag")}
+              subtitleEn="get in touch"
+              isContact
             />
-            <div className="group relative hidden border border-[#0F172A]/10 bg-paper p-8 transition-all duration-300 md:flex items-center justify-center hover:bg-white hover:border-crimson/30 shadow-sm hover:shadow-md overflow-hidden rounded-[2px]">
+            <div
+              id="crest-card"
+              className="group relative hidden border border-[#0F172A]/10 bg-paper p-8 transition-all duration-300 lg:flex flex-col items-center justify-center hover:bg-white hover:border-crimson/30 shadow-sm hover:shadow-md overflow-hidden rounded-[2px]"
+            >
+              <p className="mb-4 font-sans text-xs text-black opacity-0 max-h-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-12 text-center select-none pointer-events-none">
+                This hanko (stamp) says: Kabushiki gaisha Kamo.
+              </p>
               <img
                 src={inkanSvg}
                 alt=""
-                className="w-32 h-32 opacity-25 transition-all duration-500 group-hover:scale-105 group-hover:opacity-35"
+                className="w-32 h-32 opacity-55 transition-all duration-500 group-hover:scale-105 group-hover:opacity-85"
                 aria-hidden
               />
+              <p className="mt-4 font-sans text-xs text-black opacity-0 max-h-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-12 text-center select-none pointer-events-none">
+                The meaning in English is: Kamo, Inc.
+              </p>
             </div>
           </div>
         </div>

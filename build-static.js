@@ -50,10 +50,10 @@ copyDir("./assets", "./dist/assets");
 // 4. Copy JS files to dist/js
 copyDir("./js", "./dist/js");
 
-// 5. Copy root HTML files to dist/
+// 5. Copy root HTML files and CNAME to dist/
 const rootFiles = fs.readdirSync("./");
 rootFiles.forEach((file) => {
-  if (file.endsWith(".html")) {
+  if (file.endsWith(".html") || file === "CNAME") {
     fs.copyFileSync(file, path.join("./dist", file));
   }
 });

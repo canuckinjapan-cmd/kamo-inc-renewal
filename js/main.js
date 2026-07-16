@@ -244,7 +244,7 @@ function initParallax() {
 // Meter counter animation with progressive enhancement
 function initCounters() {
   const stats = [
-    { id: "stat-carbon", target: 100, suffix: "%" },
+    { id: "stat-carbon", target: 100, suffix: "+" },
     { id: "stat-experience", target: 35, suffix: "+" },
     { id: "stat-clients", target: 20, suffix: "+" },
   ];
@@ -267,10 +267,22 @@ function initCounters() {
     threshold: 0.1,
   };
 
+  const startTimePage = performance.now();
+  let hasAnimated = false;
+
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateStats();
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        // Synchronize with CSS fade-in delay (2.1s)
+        const elapsedSinceLoad = performance.now() - startTimePage;
+        const delayNeeded = Math.max(0, 2100 - elapsedSinceLoad);
+
+        if (delayNeeded > 0) {
+          setTimeout(animateStats, delayNeeded);
+        } else {
+          animateStats();
+        }
         observer.unobserve(entry.target);
       }
     });

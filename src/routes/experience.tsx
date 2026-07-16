@@ -59,7 +59,7 @@ function RayBackdrop() {
 function ExperiencePage() {
   return (
     <main>
-      <SectionOpener jp="実績" en="How you can benefit" kicker="03 — Experience" />
+      <SectionOpener jp="実績" en="How you can benefit" kicker="Experience" />
 
       <section className="relative mx-auto max-w-7xl px-6 pb-24 md:pb-32 overflow-hidden">
         <RayBackdrop />

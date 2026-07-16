@@ -61,7 +61,7 @@ function ContactPage() {
 
   return (
     <main>
-      <SectionOpener jp="お問い合わせ" en="Get in touch" kicker="05 — Contact" />
+      <SectionOpener jp="お問い合わせ" en="Get in touch" kicker="Contact" />
 
       <section className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-16 pb-24">
         <div className="space-y-8">

@@ -34,7 +34,7 @@ const SERVICES = [
 function ServicesPage() {
   return (
     <main>
-      <SectionOpener jp="業務内容" en="What we do" kicker="02 — Services">
+      <SectionOpener jp="業務内容" en="What we do" kicker="Services">
         kamo, inc. operates as a catalyst — translating intent into operational reality across
         language, culture, and engineering boundaries.
       </SectionOpener>
