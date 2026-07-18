@@ -4,33 +4,46 @@ This document provides strict technical guidelines and implementation patterns f
 
 ## 🏗️ Framework & Architecture
 
-- **Core Framework**: TanStack Start (Server-Side Rendered / SSR) running on the Nitro server engine.
-- **Routing Engine**: TanStack Route file-based directory (`src/routes/*`).
-- **Data Hydration**: Code must be optimized for server-side generation. Ensure all dynamic data properties are server-safe and fully compliant with React hydration boundaries.
+- **Core Architecture**: High-performance, portable bilingual static multi-page HTML website.
+- **Key Files**: The site structure consists of separate physical HTML files at the root:
+  - `index.html` (Home, Hero, Metrics, Selected Clients Marquee)
+  - `bio.html` (Who we are / Executive details)
+  - `services.html` (What we do / Consulting verticals)
+  - `experience.html` (How you can benefit / Case studies)
+  - `resources.html` (Publications / Insights)
+  - `contact.html` (Inquiries / Local coordinates / Contact form)
+- **Styling**: Tailwind CSS v4 compiled using `@tailwindcss/cli` from `src/styles.css`.
+- **Build & Compilation**: Managed by a custom `build-static.js` script that handles:
+  - Asset cleanup and directory synchronization between `/src/assets`, `/assets`, and `/dist/assets`.
+  - Copying all root static HTML files and CNAME to the `./dist` directory.
+  - Generating `.nojekyll` to disable GitHub Pages Jekyll processing.
+  - Compiling production-ready Tailwind CSS with CLI utilities to both local `css/` and build `dist/css/` paths.
+- **Local Dev Server**: Handled using Vite as a fast static asset server. The start command triggers `node build-static.js && vite` to ensure styles are built prior to startup.
 
 ## 🚦 Session Start Protocol
 
-1. **Consult Brand Guidelines**: Review `KAMO_DESIGN.md` for layout structures, spacing tokens, and color values before generating components.
-2. **Strict Output Execution**: Adhere to the single-file full-compilation protocol. State the target file path clearly (e.g., `📄 src/routes/services.tsx`) before the markdown code block. Do not truncate components or omit code blocks using placeholders.
+1. **Consult Brand Guidelines**: Review `kamo_design.md` for layout structures, spacing tokens, color values, and responsive constraints before generating components or styling changes.
+2. **Strict Output Execution**: Ensure any edits are applied directly to the correct HTML page (`index.html`, `bio.html`, etc.) or script files (`js/main.js`, etc.). Never leave incomplete code placeholders or omit translated bilingual content.
 
 ## 🎨 Implementation Patterns
 
 ### Typography & Iconography
 
 - **Corporate Typefaces**: Utilize clean geometric sans-serif typefaces (`Inter` or system-optimized sans font stacks) paired natively with structured `Noto Sans JP` weights.
-- **Icon Assets**: Exclusively utilize `lucide-react` for iconography. Ensure proper icon semantic mapping (e.g., global network icons for international business modules, secure lock icons for partnership segments).
+- **Icon Assets**: Exclusively utilize `lucide-react` via CDN or appropriate client-side svg icons as established in the HTML files. Maintain uniform icon sizes and clean alignment.
 
-### TanStack Native SEO & Metas
+### Native SEO & Metadata
 
-- **Routing Metas**: Do not inject raw HTML `<head>` markup inside page routes. Utilize native TanStack Route `meta` arrays or configuration hooks to map titles, target meta descriptions, and complete Open Graph schemas dynamically.
-- **JSON-LD Schema**: Inject valid, minified `ConsultingBusiness` or `Organization` Schema.org structures directly inside a script element in the component layout block to pass geo-targeting arrays natively.
+- **Metadata Rules**: Ensure accurate `<title>` and metadata descriptions are defined within each page's `<head>` tag.
+- **JSON-LD Schema**: Maintain valid `ConsultingBusiness` or `Organization` Schema.org structures in the head of core pages to pass geo-targeting arrays natively.
 
 ## 🛠️ Performance & Accessibility (Core Web Vitals)
 
-- **Asset Control**: Enforce explicit layout properties (`width`, `height`, and `loading="lazy"`) on structural B2B graphics to prevent layout shifts during SSR initialization.
-- **Aria Roles**: Every interactive element, navigation anchor, and localized interface control must include explicit descriptive `aria-label` declarations.
+- **Asset Control**: Enforce explicit layout properties (`width`, `height`, and `loading="lazy"`) on structural B2B graphics to prevent layout shifts.
+- **Aria Roles**: Every interactive element, navigation anchor, and localized language switch control must include explicit descriptive `aria-label` declarations.
 
 ## ⚠️ Framework Anti-Patterns
 
-- **No Static Entry Targets**: Do not attempt to modify or reference a root `index.html` file. All core HTML page shells must reside in `src/routes/__root.tsx`.
-- **No Dynamic Hydration Disruptions**: Avoid raw client-side window or browser API calls at the root execution layer of components without proper wrapper guards or useEffect blocks.
+- **No Static Entry Targets (Obsolete)**: The project is a static site. Modifying `/index.html` and other page HTML files directly is the expected behavior.
+- **No Absolute Path Assets**: Do NOT use absolute root-relative asset URLs (like `/css/styles.css` or `/assets/logo.png`). Always use relative paths (e.g., `css/styles.css`, `assets/logo.png`) to support subfolder deployments on GitHub Pages or custom subdirectories.
+

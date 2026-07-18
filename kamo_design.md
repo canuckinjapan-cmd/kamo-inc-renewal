@@ -46,6 +46,13 @@ The Kamo, Inc. visual architecture is engineered for enterprise trust, clarity, 
 - **Target Location**: Sakaki-machi, Hanishina District, Nagano Prefecture, Japan (〒389-0601).
 - **Execution**: Clear typographic presentation of international coordinate routing, corporate registration information, and embedded JSON-LD schemas mapped precisely to local coordinates for local B2B discoverability.
 
+### 3. Selected Clients & Partners Section
+
+- **Layout**: High-contrast, elegant presentation of the dynamic logo marquee showcasing corporate prestige.
+- **Header Structure**: Utilizes an enlarged bold display heading (`text-2xl sm:text-3xl font-sans font-bold text-[#0F172A] tracking-tight`) paired with a localized Japanese subtitle translation.
+- **Bilingual Subtext**: Styled with medium font weights (`text-[14px] sm:text-[15px] font-medium text-ink/70`) and a constrained maximum width (`max-w-2xl mx-auto`) for comfortable editorial reading and professional appearance.
+- **Seamless Spacing Continuity**: Framed with a balanced `border-y` to eliminate gaps between the preceding statistics meter bar and the scrolling partners array, integrating them into a unified layout flow.
+
 ## 🏗️ Interaction Guidelines
 
 - **Micro-interactions**: Subtle color values shifts on action elements (e.g., default transitions from dark slate to crimson red) using hardware-accelerated transitions.
