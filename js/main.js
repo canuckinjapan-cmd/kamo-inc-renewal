@@ -125,36 +125,89 @@ if (document.readyState === "loading") {
 
 // Full language switching framework
 function initLang() {
-  let stored = "en";
+  let stored = null;
   try {
     if (
       typeof localStorage !== "undefined" &&
       localStorage &&
       typeof localStorage.getItem === "function"
     ) {
-      stored = localStorage.getItem("kamo-lang") || "en";
+      stored = localStorage.getItem("kamo_lang") || localStorage.getItem("kamo-lang");
     }
   } catch (e) {
-    // Falls back silently when localStorage is restricted or blocked inside sandboxed iframe
+    // Falls back silently when localStorage is restricted
   }
-  setLang(stored);
+
+  const isJpPage =
+    window.location.pathname.includes("/ja/") || window.location.pathname.endsWith("/ja");
+
+  if (!stored) {
+    // Detect browser language (not region detection)
+    var userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ""];
+    var isJapanese = false;
+    for (var i = 0; i < userLangs.length; i++) {
+      if (userLangs[i] && userLangs[i].toLowerCase().indexOf("ja") === 0) {
+        isJapanese = true;
+        break;
+      }
+    }
+    stored = isJapanese ? "ja" : "en";
+    try {
+      if (
+        typeof localStorage !== "undefined" &&
+        localStorage &&
+        typeof localStorage.setItem === "function"
+      ) {
+        localStorage.setItem("kamo_lang", stored);
+        localStorage.setItem("kamo-lang", stored);
+      }
+    } catch (e) {}
+  }
+
+  if (stored === "ja" && !isJpPage) {
+    window.location.replace(window.location.pathname.includes("/ja") ? "./" : "ja/");
+    return;
+  } else if (stored === "en" && isJpPage) {
+    window.location.replace("../");
+    return;
+  }
+
+  setLangState(isJpPage ? "ja" : "en");
 }
 
 function setLang(lang) {
+  const normLang = lang === "ja" || lang === "jp" ? "ja" : "en";
   try {
     if (
       typeof localStorage !== "undefined" &&
       localStorage &&
       typeof localStorage.setItem === "function"
     ) {
-      localStorage.setItem("kamo-lang", lang);
+      localStorage.setItem("kamo_lang", normLang);
+      localStorage.setItem("kamo-lang", normLang);
     }
   } catch (e) {
-    // Falls back silently when localStorage is restricted or blocked inside sandboxed iframe
+    // Falls back silently
   }
+
+  const isJpPage =
+    window.location.pathname.includes("/ja/") || window.location.pathname.endsWith("/ja");
+
+  if (normLang === "en" && isJpPage) {
+    window.location.href = "../";
+    return;
+  } else if (normLang === "ja" && !isJpPage) {
+    window.location.href = "ja/";
+    return;
+  }
+
+  setLangState(normLang);
+}
+
+function setLangState(lang) {
   document.documentElement.setAttribute("lang", lang);
 
-  // Update page-wide styles rule to prevent display flickers
+  // Update page-wide styles rule if needed
   let style = document.getElementById("lang-loader-style");
   if (!style) {
     style = document.createElement("style");
@@ -191,7 +244,7 @@ function setLang(lang) {
   });
 
   flagJpImgs.forEach((img) => {
-    if (lang === "jp") {
+    if (lang === "ja" || lang === "jp") {
       img.className =
         "h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs brightness-100 opacity-100 cursor-default";
     } else {

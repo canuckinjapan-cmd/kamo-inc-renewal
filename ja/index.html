@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="en" class="bg-[#F8FAFC]">
+<html lang="ja" class="bg-[#F8FAFC]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Kamo, Inc. — High-Tech Marketing Catalyst | Japan Market Entry</title>
+    <title>Kamo, Inc. — 日本市場参入・ハイテクビジネスコンサルティング</title>
     <meta
       name="description"
-      content="Kamo, Inc. facilitates cross-border high-tech business entry, international technology exchange, and strategic marketing partnerships between Western high-tech firms and the Japanese market from Sakaki-machi, Nagano Prefecture."
+      content="Kamo, Inc.（カモ株式会社）は長野県坂城町を拠点に、欧米のハイテク企業と日本市場をつなぐ技術交流・市場参入・戦略的マーケティングパートナーシップを支援します。"
     />
     <meta
       name="keywords"
-      content="High-tech marketing consultancy Japan, international technology transfer, cross-border business catalyst, Nagano high-tech consultant, technology business entry Japan, Sakaki-machi, Nagano Prefecture"
+      content="ハイテクマーケティングコンサルタント日本, 国際技術移転, クロスボーダービジネス, 長野県坂城町, 日本市場参入支援"
     />
 
     <!-- SEO Canonicals and Hreflang Tags -->
-    <link rel="canonical" href="https://www.kamoinc.com/" />
+    <link rel="canonical" href="https://www.kamoinc.com/ja/" />
     <link rel="alternate" hreflang="en" href="https://www.kamoinc.com/" />
     <link rel="alternate" hreflang="ja" href="https://www.kamoinc.com/ja/" />
     <link rel="alternate" hreflang="x-default" href="https://www.kamoinc.com/" />
@@ -23,25 +23,25 @@
     <!-- Open Graph Tags -->
     <meta
       property="og:title"
-      content="Kamo, Inc. — High-Tech Marketing Catalyst | Japan Market Entry"
+      content="Kamo, Inc. — 日本市場参入・ハイテクビジネスコンサルティング"
     />
     <meta
       property="og:description"
-      content="Catalyzing cross-border high-tech business entry, international technology exchange, and strategic marketing partnerships between Western high-tech firms and the Japanese market."
+      content="欧米ハイテク企業の日本市場参入、国際技術交流、戦略的パートナーシップを強力に促進します。"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.kamoinc.com/" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://www.kamoinc.com/ja/" />
+    <meta property="og:locale" content="ja_JP" />
     <meta property="og:image" content="https://www.kamoinc.com/assets/kamo-inc-logo-2026.svg" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Kamo, Inc. — High-Tech Marketing Catalyst Partner in Japan"
+      content="Kamo, Inc. — 日本市場参入・ハイテクビジネスコンサルティング"
     />
     <meta
       name="twitter:description"
-      content="Facilitating cross-border tech business entry, partnership matchmaking, and local market operations from Sakaki, Nagano, Japan."
+      content="欧米ハイテク企業の日本市場参入、パートナーシップ構築、事業立ち上げを長野県坂城町から支援。"
     />
 
     <!-- Fonts -->
@@ -53,7 +53,7 @@
     />
 
     <!-- Production compiled Tailwind v4 layout CSS -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
 
     <!-- Custom Responsive Spacing for Tablet Portrait -->
     <style>
@@ -88,30 +88,13 @@
       }
     </style>
 
-    <!-- Browser Language Auto-Detection Handler -->
+    <!-- Pre-render language preference handler -->
     <script>
       (function () {
         try {
           var savedLang = localStorage.getItem("kamo_lang") || localStorage.getItem("kamo-lang");
-          if (savedLang === "ja") {
-            window.location.replace("ja/");
-            return;
-          } else if (savedLang === "en") {
-            return;
-          }
-          // Detect browser language (not region)
-          var userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ""];
-          var isJapanese = false;
-          for (var i = 0; i < userLangs.length; i++) {
-            if (userLangs[i] && userLangs[i].toLowerCase().indexOf("ja") === 0) {
-              isJapanese = true;
-              break;
-            }
-          }
-          if (isJapanese) {
-            localStorage.setItem("kamo_lang", "ja");
-            localStorage.setItem("kamo-lang", "ja");
-            window.location.replace("ja/");
+          if (savedLang === "en") {
+            window.location.replace("../");
           }
         } catch (e) {}
       })();
@@ -124,8 +107,8 @@
       class="sticky top-0 z-50 backdrop-blur-md bg-paper/80 border-b border-transparent transition-all duration-300"
     >
       <div class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between gap-6">
-        <a href="index.html" class="flex items-center gap-3 group relative">
-          <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
+        <a href="../ja/" class="flex items-center gap-3 group relative">
+          <img src="../assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
           <div
             id="return-to-top-tooltip"
             class="absolute top-[125%] left-0 z-50 rounded-md bg-crimson px-2.5 py-1 text-[9px] font-sans font-medium tracking-[0.16em] text-white uppercase whitespace-nowrap shadow-md opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none"
@@ -133,46 +116,46 @@
             <div
               class="absolute top-0 left-5 h-1.5 w-1.5 -translate-y-[40%] rotate-45 bg-crimson"
             ></div>
-            <span>Return to top</span>
+            <span>トップに戻る</span>
           </div>
         </a>
 
         <!-- Desktop Navigation Menu -->
         <nav class="hidden lg:flex items-center gap-7 text-[13px] tracking-[0.18em] uppercase">
           <a
-            href="bio.html"
+            href="../bio.html"
             id="nav-bio"
             class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
           >
-            <span>Bio</span>
+            <span>経歴</span>
           </a>
           <a
-            href="services.html"
+            href="../services.html"
             id="nav-services"
             class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
           >
-            <span>Services</span>
+            <span>業務内容</span>
           </a>
           <a
-            href="experience.html"
+            href="../experience.html"
             id="nav-experience"
             class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
           >
-            <span>Experience</span>
+            <span>実績</span>
           </a>
           <a
-            href="resources.html"
+            href="../resources.html"
             id="nav-resources"
             class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
           >
-            <span>Resources</span>
+            <span>資料</span>
           </a>
           <a
-            href="contact.html"
+            href="../contact.html"
             id="nav-contact"
             class="text-ink/70 font-black hover:text-crimson transition-all duration-200 inline-block transform hover:scale-110 origin-center"
           >
-            <span>Contact</span>
+            <span>お問い合わせ</span>
           </a>
         </nav>
 
@@ -187,9 +170,9 @@
             >
               <img
                 id="flag-en-img"
-                src="assets/us.png"
+                src="../assets/us.png"
                 alt="English"
-                class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-100 opacity-100 cursor-default"
+                class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-75 opacity-70 hover:brightness-100 hover:opacity-100 cursor-pointer"
               />
             </button>
             <span class="text-ink/10 select-none">/</span>
@@ -201,9 +184,9 @@
             >
               <img
                 id="flag-jp-img"
-                src="assets/jp.png"
+                src="../assets/jp.png"
                 alt="日本語"
-                class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-75 opacity-70 hover:brightness-100 hover:opacity-100 cursor-pointer"
+                class="h-[18px] w-auto object-contain rounded-[2px] border border-ink/10 shadow-xs transition-all duration-350 brightness-100 opacity-100 cursor-default"
               />
             </button>
           </div>
@@ -212,7 +195,7 @@
           <button
             data-mobile-menu-toggle="open"
             class="lg:hidden flex items-center justify-center p-2 text-ink/70 hover:text-crimson transition-all duration-300 focus:outline-none"
-            aria-label="Toggle Menu"
+            aria-label="メニューを開く"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -243,15 +226,15 @@
       <div
         class="mx-auto w-full max-w-7xl px-6 h-16 flex items-center justify-between gap-6 border-b border-ink/5 bg-paper shrink-0"
       >
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
+        <a href="../ja/" class="flex items-center gap-3">
+          <img src="../assets/kamo-inc-logo-2026.svg" alt="kamo, inc." class="h-9 w-auto" />
         </a>
 
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-2">
             <button data-lang-switch="en" class="focus:outline-none">
               <img
-                src="assets/us.png"
+                src="../assets/us.png"
                 alt="English"
                 class="mobile-flag-en h-[18px] w-auto object-contain rounded-[2px] border border-ink/10"
               />
@@ -259,7 +242,7 @@
             <span class="text-ink/10 select-none">/</span>
             <button data-lang-switch="ja" class="focus:outline-none">
               <img
-                src="assets/jp.png"
+                src="../assets/jp.png"
                 alt="日本語"
                 class="mobile-flag-jp h-[18px] w-auto object-contain rounded-[2px] border border-ink/10"
               />
@@ -269,7 +252,7 @@
           <button
             data-mobile-menu-toggle="close"
             class="p-2 text-ink/70 hover:text-crimson focus:outline-none"
-            aria-label="Close Menu"
+            aria-label="メニューを閉じる"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -295,7 +278,7 @@
       >
         <div class="space-y-5 landscape:space-y-3 max-w-sm mx-auto w-full">
           <a
-            href="bio.html"
+            href="../bio.html"
             class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
           >
             <div class="flex items-baseline gap-4">
@@ -303,7 +286,7 @@
               <span
                 class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
               >
-                <span>Bio</span>
+                <span>経歴</span>
               </span>
             </div>
             <span
@@ -312,7 +295,7 @@
             >
           </a>
           <a
-            href="services.html"
+            href="../services.html"
             class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
           >
             <div class="flex items-baseline gap-4">
@@ -320,7 +303,7 @@
               <span
                 class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
               >
-                <span>Services</span>
+                <span>業務内容</span>
               </span>
             </div>
             <span
@@ -329,7 +312,7 @@
             >
           </a>
           <a
-            href="experience.html"
+            href="../experience.html"
             class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
           >
             <div class="flex items-baseline gap-4">
@@ -337,7 +320,7 @@
               <span
                 class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
               >
-                <span>Experience</span>
+                <span>実績</span>
               </span>
             </div>
             <span
@@ -346,7 +329,7 @@
             >
           </a>
           <a
-            href="resources.html"
+            href="../resources.html"
             class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
           >
             <div class="flex items-baseline gap-4">
@@ -354,7 +337,7 @@
               <span
                 class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
               >
-                <span>Resources</span>
+                <span>資料</span>
               </span>
             </div>
             <span
@@ -363,7 +346,7 @@
             >
           </a>
           <a
-            href="contact.html"
+            href="../contact.html"
             class="group flex items-baseline justify-between py-3 border-b border-ink/5 hover:border-crimson/30 transition-all duration-300"
           >
             <div class="flex items-baseline gap-4">
@@ -371,7 +354,7 @@
               <span
                 class="text-lg font-medium tracking-[0.16em] uppercase text-ink/80 group-hover:text-crimson transition-all duration-200"
               >
-                <span>Contact</span>
+                <span>お問い合わせ</span>
               </span>
             </div>
             <span
@@ -568,8 +551,8 @@
 
             <!-- 1. Authentic Sumi-e Image Background -->
             <image
-              href="assets/sumie_background.jpg"
-              xlink:href="assets/sumie_background.jpg"
+              href="../assets/sumie_background.jpg"
+              xlink:href="../assets/sumie_background.jpg"
               opacity="0.13"
               x="0"
               y="0"
@@ -600,7 +583,7 @@
               class="relative w-full max-w-[390px] sm:max-w-[440px] md:max-w-[510px] lg:max-w-none lg:scale-105 transition-transform duration-300"
             >
               <img
-                src="assets/Kamo-inc-duck-origami07.png"
+                src="../assets/Kamo-inc-duck-origami07.png"
                 alt="Kamo Origami Duck"
                 class="w-full h-auto drop-shadow-md select-none pointer-events-none"
                 referrerpolicy="no-referrer"
@@ -617,7 +600,7 @@
               class="font-sans font-bold text-3xl sm:text-4xl md:text-[45px] leading-[1.15] text-[#0F172A] tracking-tight animate-logo-fade animate-duration-1000"
               style="animation-delay: 0.9s"
             >
-              <span>Japan market entry and business development for high-tech organizations.</span>
+              <span>ハイテク企業のための日本市場参入とビジネス開発。</span>
             </h1>
 
             <!-- Hero Subheading -->
@@ -625,7 +608,7 @@
               class="mt-6 font-serif text-base sm:text-lg md:text-[19px] leading-relaxed text-[#0F172A]/90 lg:max-w-[580px] animate-logo-fade"
               style="animation-delay: 1.3s"
             >
-              <span>Kamo helps multinationals, startups, and research-driven organizations build partnerships, validate opportunities, and grow in the Japanese market.</span>
+              <span>Kamo（鴨）は、多国籍企業、スタートアップ、研究主導型の組織が、日本市場においてパートナーシップを構築し、機会を検証し、成長するのを支援します。</span>
             </p>
 
             <!-- CTA Buttons -->
@@ -634,16 +617,16 @@
               style="animation-delay: 1.7s"
             >
               <a
-                href="contact.html"
+                href="../contact.html"
                 class="w-full sm:w-auto inline-flex items-center justify-center bg-crimson hover:bg-crimson/90 text-[13px] md:text-[14px] font-sans font-medium text-white px-8 py-4 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.05] sm:origin-left"
               >
-                <span>Schedule Strategy Consultation</span>
+                <span>戦略コンサルティング相談を予約する</span>
               </a>
               <a
-                href="experience.html"
+                href="../experience.html"
                 class="w-full sm:w-auto inline-flex items-center justify-center border border-[#0F172A]/20 hover:border-crimson text-[13px] md:text-[14px] font-sans font-medium text-[#0F172A] hover:text-crimson px-8 py-4 transition-all duration-300 bg-white hover:-translate-y-0.5 hover:scale-[1.05] sm:origin-left"
               >
-                <span>View Experience</span>
+                <span>実績を見る</span>
               </a>
             </div>
           </div>
@@ -667,7 +650,7 @@
                 <span
                   class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]"
                 >
-                  <span>Projects Supported</span>
+                  <span>プロジェクトを支援</span>
                 </span>
               </div>
 
@@ -681,7 +664,7 @@
                 <span
                   class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]"
                 >
-                  <span>Years in Japan Technology</span>
+                  <span>日本での技術経験年数</span>
                 </span>
               </div>
 
@@ -695,7 +678,7 @@
                 <span
                   class="mt-2 text-[10px] sm:text-[11px] md:text-[12px] font-sans font-semibold tracking-[0.16em] uppercase text-[#F67C59]"
                 >
-                  <span>Global Clients</span>
+                  <span>グローバルクライアント</span>
                 </span>
               </div>
             </div>
@@ -712,10 +695,10 @@
           <h2
             class="font-sans font-bold text-2xl sm:text-3xl text-[#0F172A] tracking-tight"
           >
-            <span>Selected Clients & Partners</span>
+            <span>主要クライアント・パートナー</span>
           </h2>
           <p class="mt-3 text-[14px] sm:text-[15px] text-ink/70 max-w-2xl mx-auto font-medium">
-            <span>A selection of organizations kamo, inc. has supported over 35+ years of Japan-market technology consulting.</span>
+            <span>kamo, inc.が35年以上にわたる日本市場でのテクノロジー・コンサルティングで支援してきた組織の一部をご紹介します。</span>
           </p>
         </div>
 
@@ -727,7 +710,7 @@
               title="IBM"
             >
               <img
-                src="assets/IBM-logo.svg"
+                src="../assets/IBM-logo.svg"
                 alt="IBM"
                 class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -741,7 +724,7 @@
               title="Oracle"
             >
               <img
-                src="assets/Oracle_logo.svg"
+                src="../assets/Oracle_logo.svg"
                 alt="Oracle"
                 class="h-[16px] md:h-[18px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -755,7 +738,7 @@
               title="Hitachi"
             >
               <img
-                src="assets/Hitachi_2025_logo.svg"
+                src="../assets/Hitachi_2025_logo.svg"
                 alt="Hitachi"
                 class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -769,7 +752,7 @@
               title="Fujitsu"
             >
               <img
-                src="assets/Fujitsu-Logo.svg"
+                src="../assets/Fujitsu-Logo.svg"
                 alt="Fujitsu"
                 class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -783,7 +766,7 @@
               title="NTT DATA"
             >
               <img
-                src="assets/NTT_Data_2025.svg"
+                src="../assets/NTT_Data_2025.svg"
                 alt="NTT DATA"
                 class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -797,7 +780,7 @@
               title="Panasonic"
             >
               <img
-                src="assets/Panasonic_logo.svg"
+                src="../assets/Panasonic_logo.svg"
                 alt="Panasonic"
                 class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -811,7 +794,7 @@
               title="Nippon Steel"
             >
               <img
-                src="assets/Nippon_Steel_-_Logo.svg"
+                src="../assets/Nippon_Steel_-_Logo.svg"
                 alt="Nippon Steel"
                 class="h-[26px] md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -825,7 +808,7 @@
               title="Toshiba"
             >
               <img
-                src="assets/Toshiba_logo.svg"
+                src="../assets/Toshiba_logo.svg"
                 alt="Toshiba"
                 class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -839,7 +822,7 @@
               title="CTC"
             >
               <img
-                src="assets/CTC-logo.svg"
+                src="../assets/CTC-logo.svg"
                 alt="CTC"
                 class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -853,7 +836,7 @@
               title="University of Tokyo"
             >
               <img
-                src="assets/University_of_Tokyo_logo.svg"
+                src="../assets/University_of_Tokyo_logo.svg"
                 alt="University of Tokyo"
                 class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -869,7 +852,7 @@
               title="IBM"
             >
               <img
-                src="assets/IBM-logo.svg"
+                src="../assets/IBM-logo.svg"
                 alt="IBM"
                 class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -883,7 +866,7 @@
               title="Oracle"
             >
               <img
-                src="assets/Oracle_logo.svg"
+                src="../assets/Oracle_logo.svg"
                 alt="Oracle"
                 class="h-[16px] md:h-[18px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -897,7 +880,7 @@
               title="Hitachi"
             >
               <img
-                src="assets/Hitachi_2025_logo.svg"
+                src="../assets/Hitachi_2025_logo.svg"
                 alt="Hitachi"
                 class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -911,7 +894,7 @@
               title="Fujitsu"
             >
               <img
-                src="assets/Fujitsu-Logo.svg"
+                src="../assets/Fujitsu-Logo.svg"
                 alt="Fujitsu"
                 class="h-5 md:h-6 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -925,7 +908,7 @@
               title="NTT DATA"
             >
               <img
-                src="assets/NTT_Data_2025.svg"
+                src="../assets/NTT_Data_2025.svg"
                 alt="NTT DATA"
                 class="h-[18px] md:h-[22px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -939,7 +922,7 @@
               title="Panasonic"
             >
               <img
-                src="assets/Panasonic_logo.svg"
+                src="../assets/Panasonic_logo.svg"
                 alt="Panasonic"
                 class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -953,7 +936,7 @@
               title="Nippon Steel"
             >
               <img
-                src="assets/Nippon_Steel_-_Logo.svg"
+                src="../assets/Nippon_Steel_-_Logo.svg"
                 alt="Nippon Steel"
                 class="h-[26px] md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -967,7 +950,7 @@
               title="Toshiba"
             >
               <img
-                src="assets/Toshiba_logo.svg"
+                src="../assets/Toshiba_logo.svg"
                 alt="Toshiba"
                 class="h-[18px] md:h-[21px] w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -981,7 +964,7 @@
               title="CTC"
             >
               <img
-                src="assets/CTC-logo.svg"
+                src="../assets/CTC-logo.svg"
                 alt="CTC"
                 class="h-6 md:h-7 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -995,7 +978,7 @@
               title="University of Tokyo"
             >
               <img
-                src="assets/University_of_Tokyo_logo.svg"
+                src="../assets/University_of_Tokyo_logo.svg"
                 alt="University of Tokyo"
                 class="h-8 md:h-9 w-auto max-w-[150px] md:max-w-[180px] object-contain select-none"
               />
@@ -1015,9 +998,9 @@
             id="menu-cards-grid"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[10px]"
           >
-            <!-- Card 01: Bio -->
+            <!-- Card 01: 経歴 / Bio -->
             <a
-              href="bio.html"
+              href="../bio.html"
               class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
             >
               <div
@@ -1025,14 +1008,14 @@
               >
                 <svg viewBox="0 0 100 100" class="w-full h-full">
                   <defs>
-                    <radialGradient id="sunGlowCard-01" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="sunGlowCard-01-jp" cx="50%" cy="50%" r="50%">
                       <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
                       <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
                       <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
                       <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
                     </radialGradient>
                   </defs>
-                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-01)"></circle>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-01-jp)"></circle>
                 </svg>
               </div>
               <div class="relative z-10 flex flex-col justify-between h-full">
@@ -1041,9 +1024,9 @@
                     class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
                   >
                     <div class="flex items-baseline gap-3">
-                      <h3 class="font-serif text-3xl text-[#0F172A]">Bio</h3>
+                      <h3 class="font-serif text-3xl text-[#0F172A]">経歴</h3>
                       <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
-                        <span>who we are</span>
+                        <span>私たちについて</span>
                       </span>
                     </div>
                     <span
@@ -1056,19 +1039,19 @@
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Established 1991 with long-term Japan-market experience.</span>
+                        <span>1991年設立、長年にわたる日本市場での豊富な実績と経験。</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Principal background in technology, research, and cross-border negotiations.</span>
+                        <span>技術、研究開発、およびクロスボーダー交渉における代表者の深いバックグラウンド。</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Best place for trust, origin story, and relationship depth.</span>
+                        <span>信頼、創業ストーリー、および深い信頼関係を築く最適なパートナー。</span>
                       </div>
                     </li>
                   </ul>
@@ -1076,9 +1059,9 @@
               </div>
             </a>
 
-            <!-- Card 02: Services -->
+            <!-- Card 02: 業務内容 / Services -->
             <a
-              href="services.html"
+              href="../services.html"
               class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
             >
               <div
@@ -1086,14 +1069,14 @@
               >
                 <svg viewBox="0 0 100 100" class="w-full h-full">
                   <defs>
-                    <radialGradient id="sunGlowCard-02" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="sunGlowCard-02-jp" cx="50%" cy="50%" r="50%">
                       <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
                       <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
                       <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
                       <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
                     </radialGradient>
                   </defs>
-                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-02)"></circle>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-02-jp)"></circle>
                 </svg>
               </div>
               <div class="relative z-10 flex flex-col justify-between h-full">
@@ -1102,9 +1085,9 @@
                     class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
                   >
                     <div class="flex items-baseline gap-3">
-                      <h3 class="font-serif text-3xl text-[#0F172A]">Services</h3>
+                      <h3 class="font-serif text-3xl text-[#0F172A]">業務内容</h3>
                       <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
-                        <span>what we do</span>
+                        <span>提供サービス</span>
                       </span>
                     </div>
                     <span
@@ -1117,19 +1100,19 @@
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Japan market entry and validation.</span>
+                        <span>日本市場への参入および妥当性検証。</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Business development and strategic partnerships.</span>
+                        <span>事業開発および戦略的パートナーシップ。</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Technology commercialization and academic-industry support.</span>
+                        <span>技術の商業化および産学連携支援。</span>
                       </div>
                     </li>
                   </ul>
@@ -1137,9 +1120,9 @@
               </div>
             </a>
 
-            <!-- Card 03: Experience -->
+            <!-- Card 03: 実績 / Experience -->
             <a
-              href="experience.html"
+              href="../experience.html"
               class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
             >
               <div
@@ -1147,14 +1130,14 @@
               >
                 <svg viewBox="0 0 100 100" class="w-full h-full">
                   <defs>
-                    <radialGradient id="sunGlowCard-03" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="sunGlowCard-03-jp" cx="50%" cy="50%" r="50%">
                       <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
                       <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
                       <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
                       <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
                     </radialGradient>
                   </defs>
-                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-03)"></circle>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-03-jp)"></circle>
                 </svg>
               </div>
               <div class="relative z-10 flex flex-col justify-between h-full">
@@ -1163,9 +1146,9 @@
                     class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
                   >
                     <div class="flex items-baseline gap-3">
-                      <h3 class="font-serif text-3xl text-[#0F172A]">Experience</h3>
+                      <h3 class="font-serif text-3xl text-[#0F172A]">実績</h3>
                       <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
-                        <span>how you can benefit</span>
+                        <span>実績と価値</span>
                       </span>
                     </div>
                     <span
@@ -1178,19 +1161,19 @@
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Market-entry obstacles solved over multiple decades.</span>
+                        <span>数十年にわたり市場参入における障害を克服・解決。</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Support for component supply and strategic relationships.</span>
+                        <span>部品供給および戦略的関係構築へのサポート。</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Japan as a platform for wider APAC opportunities.</span>
+                        <span>より広範なアジア太平洋（APAC）展開のためのプラットフォームとしての日本。</span>
                       </div>
                     </li>
                   </ul>
@@ -1198,9 +1181,9 @@
               </div>
             </a>
 
-            <!-- Card 04: Resources -->
+            <!-- Card 04: 資料 / Resources -->
             <a
-              href="resources.html"
+              href="../resources.html"
               class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
             >
               <div
@@ -1208,14 +1191,14 @@
               >
                 <svg viewBox="0 0 100 100" class="w-full h-full">
                   <defs>
-                    <radialGradient id="sunGlowCard-04" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="sunGlowCard-04-jp" cx="50%" cy="50%" r="50%">
                       <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
                       <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
                       <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
                       <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
                     </radialGradient>
                   </defs>
-                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-04)"></circle>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-04-jp)"></circle>
                 </svg>
               </div>
               <div class="relative z-10 flex flex-col justify-between h-full">
@@ -1224,9 +1207,9 @@
                     class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
                   >
                     <div class="flex items-baseline gap-3">
-                      <h3 class="font-serif text-3xl text-[#0F172A]">Resources</h3>
+                      <h3 class="font-serif text-3xl text-[#0F172A]">資料</h3>
                       <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
-                        <span>useful links</span>
+                        <span>関連資料</span>
                       </span>
                     </div>
                     <span
@@ -1239,19 +1222,19 @@
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Doing Business in Japan - White papers</span>
+                        <span>日本でのビジネス展開 - ホワイトペーパー</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Robotics and Industry briefings - Slides</span>
+                        <span>ロボティクスおよび業界ブリーフィング - スライド資料</span>
                       </div>
                     </li>
                     <li class="flex items-start gap-2.5">
                       <span class="text-crimson shrink-0 mt-1.5 text-[8px]">•</span>
                       <div>
-                        <span>Culture, technology, and market insight - Videos</span>
+                        <span>文化、技術、および市場インサイト - ビデオ・動画</span>
                       </div>
                     </li>
                   </ul>
@@ -1259,9 +1242,9 @@
               </div>
             </a>
 
-            <!-- Card 05: Contact -->
+            <!-- Card 05: お問い合わせ / Contact -->
             <a
-              href="contact.html"
+              href="../contact.html"
               class="group relative block border border-[#0F172A]/10 bg-paper p-8 hover:bg-white hover:border-crimson/30 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md rounded-[2px]"
             >
               <div
@@ -1269,14 +1252,14 @@
               >
                 <svg viewBox="0 0 100 100" class="w-full h-full">
                   <defs>
-                    <radialGradient id="sunGlowCard-05" cx="50%" cy="50%" r="50%">
+                    <radialGradient id="sunGlowCard-05-jp" cx="50%" cy="50%" r="50%">
                       <stop offset="0%" stop-color="#AC1C24" stop-opacity="0.85"></stop>
                       <stop offset="55%" stop-color="#C92A32" stop-opacity="0.5"></stop>
                       <stop offset="80%" stop-color="#EA5256" stop-opacity="0.25"></stop>
                       <stop offset="100%" stop-color="#F28D90" stop-opacity="0"></stop>
                     </radialGradient>
                   </defs>
-                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-05)"></circle>
+                  <circle cx="50" cy="50" r="50" fill="url(#sunGlowCard-05-jp)"></circle>
                 </svg>
               </div>
               <div class="relative z-10 flex flex-col justify-between h-full">
@@ -1285,9 +1268,9 @@
                     class="flex items-baseline justify-between mb-6 border-b border-[#0F172A]/5 pb-3"
                   >
                     <div class="flex items-baseline gap-3">
-                      <h3 class="font-serif text-3xl text-[#0F172A]">Contact</h3>
+                      <h3 class="font-serif text-3xl text-[#0F172A]">お問い合わせ</h3>
                       <span class="text-xs font-sans text-[#0F172A]/50 tracking-wider menu-card-subtitle">
-                        <span>get in touch</span>
+                        <span>ご連絡</span>
                       </span>
                     </div>
                     <span
@@ -1300,7 +1283,7 @@
                     <div
                       class="inline-flex items-center justify-center bg-crimson text-white px-8 py-4 text-[12px] md:text-[13px] font-sans font-medium uppercase tracking-[0.2em] shadow-md transition-all duration-300 rounded-[2px] group-hover:bg-crimson/90 group-hover:shadow-lg group-hover:-translate-y-0.5 group-hover:scale-[1.05] border-none"
                     >
-                      <span>Start a Conversation</span>
+                      <span>対話を始める</span>
                     </div>
                   </div>
                 </div>
@@ -1313,16 +1296,16 @@
               class="group relative hidden border border-[#0F172A]/10 bg-paper p-8 transition-all duration-300 md:flex flex-col items-center justify-center hover:bg-white hover:border-crimson/30 shadow-sm hover:shadow-md overflow-hidden rounded-[2px]"
             >
               <p class="mb-4 font-sans text-xs text-black opacity-0 max-h-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-12 text-center select-none pointer-events-none">
-                This hanko (stamp) says: Kabushiki gaisha Kamo.
+                この印鑑（判子）の文字：株式会社カモ
               </p>
               <img
-                src="assets/kamo-inc-inkan-trans.svg"
+                src="../assets/kamo-inc-inkan-trans.svg"
                 alt=""
                 class="w-32 h-32 opacity-55 transition-all duration-500 group-hover:scale-105 group-hover:opacity-85"
                 aria-hidden="true"
               />
               <p class="mt-4 font-sans text-xs text-black opacity-0 max-h-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:max-h-12 text-center select-none pointer-events-none">
-                The meaning in English is: Kamo, Inc.
+                英語表記：Kamo, Inc.
               </p>
             </div>
           </div>
@@ -1338,9 +1321,9 @@
         <div class="text-left font-sans text-sm text-ink/75">
           <span class="footer-line-1"
             ><span class="text-crimson">©</span> <span id="footer-year">2026</span> kamo, inc.
-            ・Established 1991</span
+            ・1991年設立</span
           >
-          <span class="footer-line-2">・Sakaki, Japan - All Rights Reserved</span>
+          <span class="footer-line-2">・長野県坂城町 - All Rights Reserved</span>
         </div>
         <div class="flex items-center gap-6">
           <a
@@ -1409,6 +1392,6 @@
     </footer>
 
     <!-- Main JavaScript File -->
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

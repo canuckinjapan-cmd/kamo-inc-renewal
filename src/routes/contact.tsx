@@ -70,8 +70,13 @@ function ContactPage() {
             Christopher responds personally.
           </p>
 
-          <div className="aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center">
-            <span className="block w-14 h-14 rounded-full bg-crimson/90 flex items-center justify-center text-paper">
+          <div className="aspect-video bg-ink/5 border border-ink/10 flex items-center justify-center relative overflow-hidden group">
+            <img
+              src="assets/Kamo-Inc-video-blank.jpg"
+              alt="Video thumbnail"
+              className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
+            />
+            <span className="relative z-10 block w-14 h-14 rounded-full bg-crimson/90 flex items-center justify-center text-paper shadow-md group-hover:bg-crimson group-hover:scale-110 transition-all duration-300">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M8 5v14l11-7z" />
               </svg>

@@ -7,10 +7,12 @@ const directories = [
   "./assets",
   "./css",
   "./js",
+  "./ja",
   "./dist",
   "./dist/assets",
   "./dist/css",
   "./dist/js",
+  "./dist/ja",
 ];
 
 directories.forEach((dir) => {
@@ -57,6 +59,9 @@ rootFiles.forEach((file) => {
     fs.copyFileSync(file, path.join("./dist", file));
   }
 });
+
+// 5b. Copy ja directory to dist/ja
+copyDir("./ja", "./dist/ja");
 
 // Create .nojekyll file in dist to disable Jekyll processing on GitHub Pages
 fs.writeFileSync(path.join("./dist", ".nojekyll"), "");
