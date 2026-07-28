@@ -284,7 +284,7 @@ function initParallax() {
           const scrolled = window.scrollY;
           // Adjust multiplier for parallax strength. 0.3 moves it slower than scroll.
           // It moves down relative to the container as we scroll down.
-          parallaxBg.style.transform = `scale(1.15) translateY(${scrolled * 0.4}px)`;
+          parallaxBg.style.transform = `scale(1.15) translateY(${scrolled * 0.4 - 35}px)`;
           ticking = false;
         });
         ticking = true;
