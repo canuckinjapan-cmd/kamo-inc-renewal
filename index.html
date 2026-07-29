@@ -92,26 +92,37 @@
     <script>
       (function () {
         try {
+          var userChosen = localStorage.getItem("kamo_lang_user_chosen") === "true";
           var savedLang = localStorage.getItem("kamo_lang") || localStorage.getItem("kamo-lang");
-          if (savedLang === "ja") {
-            window.location.replace("ja/");
-            return;
-          } else if (savedLang === "en") {
-            return;
+          if (userChosen && savedLang) {
+            if (savedLang === "ja") {
+              window.location.replace("ja/");
+              return;
+            } else if (savedLang === "en") {
+              return;
+            }
           }
-          // Detect browser language (not region)
+          // Detect preferred browser language based on priority order (first match of ja or en)
           var userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ""];
-          var isJapanese = false;
+          var preferredLang = "en";
           for (var i = 0; i < userLangs.length; i++) {
-            if (userLangs[i] && userLangs[i].toLowerCase().indexOf("ja") === 0) {
-              isJapanese = true;
+            var l = (userLangs[i] || "").toLowerCase().trim();
+            if (l.indexOf("ja") === 0) {
+              preferredLang = "ja";
+              break;
+            }
+            if (l.indexOf("en") === 0) {
+              preferredLang = "en";
               break;
             }
           }
-          if (isJapanese) {
+          if (preferredLang === "ja") {
             localStorage.setItem("kamo_lang", "ja");
             localStorage.setItem("kamo-lang", "ja");
             window.location.replace("ja/");
+          } else {
+            localStorage.setItem("kamo_lang", "en");
+            localStorage.setItem("kamo-lang", "en");
           }
         } catch (e) {}
       })();

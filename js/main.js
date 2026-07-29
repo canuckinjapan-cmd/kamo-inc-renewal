@@ -126,12 +126,14 @@ if (document.readyState === "loading") {
 // Full language switching framework
 function initLang() {
   let stored = null;
+  let userChosen = false;
   try {
     if (
       typeof localStorage !== "undefined" &&
       localStorage &&
       typeof localStorage.getItem === "function"
     ) {
+      userChosen = localStorage.getItem("kamo_lang_user_chosen") === "true";
       stored = localStorage.getItem("kamo_lang") || localStorage.getItem("kamo-lang");
     }
   } catch (e) {
@@ -141,17 +143,22 @@ function initLang() {
   const isJpPage =
     window.location.pathname.includes("/ja/") || window.location.pathname.endsWith("/ja");
 
-  if (!stored) {
-    // Detect browser language (not region detection)
+  if (!userChosen || !stored) {
+    // Detect preferred browser language based on priority order (first match of ja or en in preferred languages list)
     var userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ""];
-    var isJapanese = false;
+    var preferredLang = "en";
     for (var i = 0; i < userLangs.length; i++) {
-      if (userLangs[i] && userLangs[i].toLowerCase().indexOf("ja") === 0) {
-        isJapanese = true;
+      var l = (userLangs[i] || "").toLowerCase().trim();
+      if (l.indexOf("ja") === 0) {
+        preferredLang = "ja";
+        break;
+      }
+      if (l.indexOf("en") === 0) {
+        preferredLang = "en";
         break;
       }
     }
-    stored = isJapanese ? "ja" : "en";
+    stored = preferredLang;
     try {
       if (
         typeof localStorage !== "undefined" &&
@@ -185,6 +192,7 @@ function setLang(lang) {
     ) {
       localStorage.setItem("kamo_lang", normLang);
       localStorage.setItem("kamo-lang", normLang);
+      localStorage.setItem("kamo_lang_user_chosen", "true");
     }
   } catch (e) {
     // Falls back silently

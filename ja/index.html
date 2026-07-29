@@ -92,9 +92,37 @@
     <script>
       (function () {
         try {
+          var userChosen = localStorage.getItem("kamo_lang_user_chosen") === "true";
           var savedLang = localStorage.getItem("kamo_lang") || localStorage.getItem("kamo-lang");
-          if (savedLang === "en") {
+          if (userChosen && savedLang) {
+            if (savedLang === "en") {
+              window.location.replace("../");
+              return;
+            } else if (savedLang === "ja") {
+              return;
+            }
+          }
+          // Detect preferred browser language based on priority order (first match of ja or en)
+          var userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ""];
+          var preferredLang = "en";
+          for (var i = 0; i < userLangs.length; i++) {
+            var l = (userLangs[i] || "").toLowerCase().trim();
+            if (l.indexOf("ja") === 0) {
+              preferredLang = "ja";
+              break;
+            }
+            if (l.indexOf("en") === 0) {
+              preferredLang = "en";
+              break;
+            }
+          }
+          if (preferredLang === "en") {
+            localStorage.setItem("kamo_lang", "en");
+            localStorage.setItem("kamo-lang", "en");
             window.location.replace("../");
+          } else {
+            localStorage.setItem("kamo_lang", "ja");
+            localStorage.setItem("kamo-lang", "ja");
           }
         } catch (e) {}
       })();

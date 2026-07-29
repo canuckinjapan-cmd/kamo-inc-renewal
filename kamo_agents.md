@@ -38,7 +38,7 @@ This document provides strict technical guidelines and implementation patterns f
 ### 🔄 Language Detection, Switching & State Management
 - **Persistence Layer (`js/main.js`)**:
   - Stores user language preference in `localStorage` under both `kamo_lang` and `kamo-lang` keys (`"en"` or `"ja"`).
-  - **Browser Auto-Detection**: When no `localStorage` preference exists, checks `navigator.languages` or `navigator.language` for Japanese locale (`ja`) and automatically defaults to Japanese (`"ja"`); otherwise defaults to English (`"en"`).
+  - **Browser Auto-Detection**: When no user-explicit `localStorage` preference (`kamo_lang_user_chosen`) exists, checks `navigator.languages` or `navigator.language` in priority order for the user's primary language (`en` or `ja`). Defaults to Japanese (`"ja"`) only if `ja` is preferred ahead of `en`, otherwise defaults to English (`"en"`).
   - **Interactive Switchers**: Buttons with `data-lang-switch="en"` or `data-lang-switch="ja"` trigger `setLang(lang)` to update `localStorage` and smoothly redirect to the target language page.
 - **Pre-Render Flash Prevention (FOUC)**:
   - Both `/index.html` and `/ja/index.html` include an inline `<script>` block in `<head>` executing before DOM rendering. If a saved preference or browser language matches the opposite page, `window.location.replace()` redirects immediately to avoid unstyled content flashes.
