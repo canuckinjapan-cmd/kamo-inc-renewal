@@ -144,7 +144,7 @@ function initLang() {
     window.location.pathname.includes("/ja/") || window.location.pathname.endsWith("/ja");
 
   if (!userChosen || !stored) {
-    // Detect preferred browser language based on priority order (first match of ja or en in preferred languages list)
+    // Detect preferred browser language based on priority order
     var userLangs = navigator.languages || [navigator.language || navigator.userLanguage || ""];
     var preferredLang = "en";
     for (var i = 0; i < userLangs.length; i++) {
@@ -171,15 +171,23 @@ function initLang() {
     } catch (e) {}
   }
 
-  if (stored === "ja" && !isJpPage) {
-    window.location.replace(window.location.pathname.includes("/ja") ? "./" : "ja/");
-    return;
-  } else if (stored === "en" && isJpPage) {
-    window.location.replace("../");
+  // Handle redirects safely
+  if (isJpPage) {
+    if (userChosen && stored === "en") {
+      window.location.replace("../");
+      return;
+    } else {
+      setLangState("ja");
+      return;
+    }
+  }
+
+  if (!isJpPage && stored === "ja") {
+    window.location.replace("ja/");
     return;
   }
 
-  setLangState(isJpPage ? "ja" : "en");
+  setLangState("en");
 }
 
 function setLang(lang) {
@@ -211,6 +219,7 @@ function setLang(lang) {
 
   setLangState(normLang);
 }
+window.setLang = setLang;
 
 function setLangState(lang) {
   document.documentElement.setAttribute("lang", lang);

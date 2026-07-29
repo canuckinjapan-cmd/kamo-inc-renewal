@@ -41,7 +41,7 @@ This document provides strict technical guidelines and implementation patterns f
   - **Browser Auto-Detection**: When no user-explicit `localStorage` preference (`kamo_lang_user_chosen`) exists, checks `navigator.languages` or `navigator.language` in priority order for the user's primary language (`en` or `ja`). Defaults to Japanese (`"ja"`) only if `ja` is preferred ahead of `en`, otherwise defaults to English (`"en"`).
   - **Interactive Switchers**: Buttons with `data-lang-switch="en"` or `data-lang-switch="ja"` trigger `setLang(lang)` to update `localStorage` and smoothly redirect to the target language page.
 - **Pre-Render Flash Prevention (FOUC)**:
-  - Both `/index.html` and `/ja/index.html` include an inline `<script>` block in `<head>` executing before DOM rendering. If a saved preference or browser language matches the opposite page, `window.location.replace()` redirects immediately to avoid unstyled content flashes.
+  - Both `/index.html` and `/ja/index.html` include an inline `<script>` block in `<head>` executing before DOM rendering. `/index.html` redirects to `ja/` if Japanese is preferred/saved, while `/ja/index.html` strictly stays on Japanese unless the user explicitly chose English previously (`kamo_lang_user_chosen === true`).
 
 ### 🏷️ SEO & Hreflang Canonical Standards
 Every English and Japanese page includes symmetric canonical and `hreflang` tags in `<head>`:
